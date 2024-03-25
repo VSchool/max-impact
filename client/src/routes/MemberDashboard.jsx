@@ -14,11 +14,9 @@ export const MemberDashboard = () => {
     return (
         <div>
             <h1>Member Dashboard</h1>
+            <img src={user.picture} alt="avatar" width={32} height={32} />
             <h3>Welcome, {user.name}</h3>
             <button onClick={logout}>Logout</button>
-            <code>
-                <pre>{JSON.stringify(user, null, 2)}</pre>
-            </code>
         </div>
     )
 }
