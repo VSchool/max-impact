@@ -1,0 +1,49 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: auto;
+  font-size: 16px;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: -4%;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: -3%;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: -2%;
+  font-weight: bold;
+}
+
+small {
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.small {
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.extra-small {
+  font-size: 12px;
+  letter-spacing: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
