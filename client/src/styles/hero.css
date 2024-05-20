@@ -1,0 +1,38 @@
+.hero {
+  display: flex;
+  justify-content: space-around;
+  padding: 96px 0px 96px 0px;
+}
+
+.hero-container {
+  height: 378px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0px 96px 0px 96px;
+}
+
+.hero-container div {
+  width: 50%;
+  height: 100%;
+}
+
+.hero-cta-title {
+  max-width: 611px;
+  padding: 40px 0px 40px 0px;
+}
+
+.hero-cta-body {
+  max-width: 420px;
+  padding-bottom: 40px;
+}
+
+.hero-image-container {
+  background-image: url('https://placehold.co/600x400/png'); /* Replace with your image path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
+  height: 100%;
+  width: 100%;
+}

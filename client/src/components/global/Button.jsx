@@ -1,8 +1,13 @@
 import '../../styles/button.css'
 
-const Button = ({ onClick, disabled, children }) => {
+const Button = ({ onClick, disabled, children, width = '80' }) => {
   return (
-    <button className="button" onClick={onClick} disabled={disabled}>
+    <button
+      style={{ width: `${width}px` }}
+      className="button"
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   )
