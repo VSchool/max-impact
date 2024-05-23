@@ -16,7 +16,7 @@ export const Root = ({ admin }) => {
     <>
       <Navbar />
       <Landing />
-      {/* <Outlet /> */}
+      <Outlet />
     </>
   )
 }

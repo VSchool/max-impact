@@ -8,7 +8,7 @@
 }
 
 .logo {
-  height: 110px;
+  height: 107px;
   width: auto;
 }
 
@@ -33,4 +33,18 @@
 
 .navbar-links a:hover {
   color: #ddd;
+}
+
+.navbar-burger {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .navbar-burger {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+  }
 }

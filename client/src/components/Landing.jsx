@@ -1,11 +1,13 @@
-import Hero from "./Hero"
+import Hero from './Hero'
+import Navbar from './Navbar'
 
 const Landing = () => {
-    return (
-        <>
-            <Hero />
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <Hero />
+    </>
+  )
 }
 
 export default Landing

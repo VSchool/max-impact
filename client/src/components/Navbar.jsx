@@ -20,6 +20,7 @@ const Navbar = ({ links }) => {
           <Button>Log in</Button>
         </li>
       </ul>
+      <div className="navbar-burger">BURGER</div>
     </nav>
   )
 }
