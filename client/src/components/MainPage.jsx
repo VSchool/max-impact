@@ -6,16 +6,16 @@ import './FeaturesContainer.css';
 
 const MainPage = () => {
     const topics = [
-        { name: 'Leadership', icon: 'fas fa-user-tie' },
-        { name: 'Communication', icon: 'fas fa-comments' },
-        { name: 'Mindset', icon: 'fas fa-brain' },
-        { name: 'Goal Setting', icon: 'fas fa-bullseye' },
-        { name: 'Ethics', icon: 'fas fa-balance-scale' },
-        { name: 'Employee Engagement', icon: 'fas fa-users' },
-        { name: 'Customer Delight', icon: 'fas fa-smile' },
-        { name: 'Time Management', icon: 'fas fa-clock' },
-        { name: 'Team Building', icon: 'fas fa-users-cog' }
-    ];
+    { name: 'Leadership', icon: '/src/assets/icons/leadership.svg' },
+    { name: 'Communication', icon: '/src/assets/icons/communication.svg' },
+    { name: 'Mindset', icon: '/src/assets/icons/mindset.svg' },
+    { name: 'Goal Setting', icon: '/src/assets/icons/goal_setting.svg' },
+    { name: 'Ethics', icon: '/src/assets/icons/ethics.svg' },
+    { name: 'Employee Engagement', icon: '/src/assets/icons/employee_engagement.svg' },
+    { name: 'Customer Delight', icon: '/src/assets/icons/customer_delight.svg' },
+    { name: 'Time Management', icon: '/src/assets/icons/time_management.svg' },
+    { name: 'Team Building', icon: '/src/assets/icons/team_buildin.svg' }
+];
 
     return (
         <div>
