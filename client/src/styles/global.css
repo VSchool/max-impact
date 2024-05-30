@@ -1,0 +1,9 @@
+@import url('typography.css');
+@import url('colors.css');
+
+/* global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

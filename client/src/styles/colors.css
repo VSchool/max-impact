@@ -1,0 +1,9 @@
+/* Color pallete */
+:root {
+  --primary-a: #62567c;
+  --primary-b: #dc9e47;
+  --primary-c: #ffffff;
+
+  --text-dark: #000000;
+  --text-light: #ffffff;
+}

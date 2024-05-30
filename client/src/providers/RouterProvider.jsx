@@ -7,7 +7,6 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { MemberDashboard } from '../routes/MemberDashboard';
 import { AdminDashboard } from '../routes/AdminDashboard';
 import MainPage from '../components/MainPage';  
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,14 +28,12 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AdminDashboard />
-      }
-    ]
+        element: <AdminDashboard />,
+      },
+    ],
   },
 ]);
 
 export const RouteProvider = withAuthenticationRequired(() => {
-  return (
-    <ReactRouterProvider router={router} />
-  )
+  return <ReactRouterProvider router={router} />
 })

@@ -1,0 +1,60 @@
+.hero {
+  display: flex;
+  justify-content: space-around;
+  padding: 96px 0px 96px 0px;
+}
+
+.hero-container {
+  height: 378px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0px 96px 0px 96px;
+}
+
+.hero-container div {
+  width: 50%;
+  height: 378px;
+}
+
+.hero-cta-container {
+}
+
+.hero-cta-title {
+  max-width: 611px;
+  padding: 40px 0px 40px 0px;
+}
+
+.hero-cta-body {
+  max-width: 420px;
+  padding-bottom: 40px;
+}
+
+.hero-image-container {
+  background-image: url('../assets/hero-image.jpeg'); /* Replace with your image path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 25px 0px 25px;
+  }
+
+  .hero-container div {
+    height: auto;
+    min-height: 378px;
+    width: 100%;
+  }
+
+  .hero-image-container {
+    margin-top: 40px;
+  }
+}
