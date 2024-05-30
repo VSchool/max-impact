@@ -7,6 +7,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { MemberDashboard } from '../routes/MemberDashboard';
 import { AdminDashboard } from '../routes/AdminDashboard';
 import MainPage from '../components/MainPage';  
+import Login from "../components/Login";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '/login',  // Add the login route
+    element: <Login />
+  }
 ]);
 
 export const RouteProvider = withAuthenticationRequired(() => {
