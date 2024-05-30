@@ -1,12 +1,12 @@
 import {
   createBrowserRouter,
   RouterProvider as ReactRouterProvider,
-} from 'react-router-dom'
-import { Root } from '../routes/Root'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
-import { MemberDashboard } from '../routes/MemberDashboard'
-import { AdminDashboard } from '../routes/AdminDashboard'
-
+} from "react-router-dom";
+import { Root } from "../routes/Root";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { MemberDashboard } from '../routes/MemberDashboard';
+import { AdminDashboard } from '../routes/AdminDashboard';
+import MainPage from '../components/MainPage';  
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,9 +14,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MemberDashboard />,
+        element: <MainPage />  
       },
-    ],
+      {
+        path: 'member-dashboard',
+        element: <MemberDashboard />
+      }
+    ]
   },
   {
     path: '/admin',
@@ -28,7 +32,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
 export const RouteProvider = withAuthenticationRequired(() => {
   return <ReactRouterProvider router={router} />

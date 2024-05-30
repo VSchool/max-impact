@@ -28,11 +28,22 @@ export const useFileMetadataApi = () => {
     const { request } = useHttpClient();
     const [fileMetadataList, setFileMetadataList] = useState([]);
 
-    const documentsOnly = useMemo(() => fileMetadataList.filter(metadata => metadata.format === 'pdf'));
+    // const documentsOnly = useMemo(() => fileMetadataList.filter(metadata => metadata.format === 'pdf'));
+
+    // const getAllFileMetadata = async () => {
+    //     const data = await request.get('/api/file-metadata');
+    //     setFileMetadataList(data.files)
+    // };
+
+
+    const documentsOnly = useMemo(() => {
+        if (!fileMetadataList) return [];
+        return fileMetadataList.filter(metadata => metadata.format === 'pdf');
+    }, [fileMetadataList]);
 
     const getAllFileMetadata = async () => {
         const data = await request.get('/api/file-metadata');
-        setFileMetadataList(data.files)
+        setFileMetadataList(data.files);
     };
 
     const createFileMetadata = async (formData) => {

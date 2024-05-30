@@ -1,0 +1,60 @@
+/* Benefits section container */
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 24px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+}
+
+/* Benefits header */
+.benefits-header {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    color: #4A3F66;
+    text-align: center;
+}
+
+/* Benefits icons container */
+.benefits-icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap; 
+    max-width: 1440px;
+    width: 100%;
+}
+
+/* Individual benefit */
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 150px;
+    text-align: center;
+}
+
+/* Benefit icon */
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Benefit label */
+.benefit-label {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4A3F66;
+}
