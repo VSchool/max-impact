@@ -1,10 +1,9 @@
 import '../../styles/button.css'
 
-const Button = ({ onClick, disabled, children, width = '80' }) => {
+const Button = ({ onClick, disabled, children, style = "default-btn" }) => {
   return (
     <button
-      style={{ width: `${width}px` }}
-      className="button"
+      className={`button ${style}`}
       onClick={onClick}
       disabled={disabled}
     >

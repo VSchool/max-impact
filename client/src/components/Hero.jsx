@@ -12,7 +12,7 @@ const Hero = () => {
             executives and their employees accelerate their personal and
             professional growth and achieve their desired outcomes.
           </p>
-          <Button width="186">Learn more</Button>
+          <Button style="btn-landing">Learn more</Button>
         </div>
         <div className="hero-image-container"></div>
       </div>
