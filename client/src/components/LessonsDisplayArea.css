@@ -1,0 +1,56 @@
+.lessons-display-area {
+    position: absolute;
+    width: 1036px;
+    height: 1816px;
+    left: 308px;
+    top: 163px;
+    overflow-y: scroll;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.user-greeting-section {
+    background-color: #E5E5E5;
+    padding: 20px;
+}
+
+.dashboard-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    color: #000000;
+    padding: 15px;
+}
+
+.favorites-section {
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.section-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    padding-left: 35px;
+    padding-top: 20px;
+}
+
+.lessons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding: 24px;
+    gap: 40px 24px;
+}
+
+.recent-course-videos-section {
+    background-color: #E5E5E5;
+    padding: 20px;
+}
