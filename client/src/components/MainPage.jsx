@@ -3,6 +3,8 @@ import FeatureCard from './FeatureCard';
 import TopicsCovered from './TopicsCovered';
 import Benefits from './Benefits';
 import './FeaturesContainer.css'; 
+import Login from './Login';
+import './Login.css'
 
 const MainPage = () => {
     const topics = [
