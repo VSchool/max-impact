@@ -8,6 +8,11 @@ import { MemberDashboard } from '../routes/MemberDashboard';
 import { AdminDashboard } from '../routes/AdminDashboard';
 import MainPage from '../components/MainPage';  
 import Login from "../components/Login";
+import SignUp from "../components/SignUp";
+
+import LessonsDisplayArea from "../components/LessonsDisplayArea";
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -36,7 +41,15 @@ const router = createBrowserRouter([
   {
     path: '/login',  // Add the login route
     element: <Login />
-  }
+  },
+  {
+    path: '/signup',  // Add the login route
+    element: <SignUp />
+  },
+  {
+    path: '/lessons',  // Add the lessons path
+    element: <LessonsDisplayArea />
+  },
 ]);
 
 export const RouteProvider = withAuthenticationRequired(() => {
