@@ -4,6 +4,7 @@ import TopicsCovered from './TopicsCovered';
 import Benefits from './Benefits';
 import './FeaturesContainer.css'; 
 import './Login.css'
+import Testimonials from './Testimonials';
 
 const MainPage = () => {
     const topics = [
@@ -44,6 +45,9 @@ const MainPage = () => {
                     </div>
                 </div>
             </section>
+            </section>
+            <section className="testimonials-section">
+                <Testimonials />
             </section>
             <section className="topics-section">
                 <TopicsCovered topics={topics} />
