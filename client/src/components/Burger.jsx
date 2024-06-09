@@ -11,7 +11,6 @@ const Burger = ({ links }) => {
   }
 
   return (
-    <>
       <div className="burger-menu">
         <div className="navbar-burger">
           <img onClick={handleToggle} src={showMenu ? x : burger} />
@@ -31,7 +30,6 @@ const Burger = ({ links }) => {
           </div>
         )}
       </div>
-    </>
   )
 }
 
