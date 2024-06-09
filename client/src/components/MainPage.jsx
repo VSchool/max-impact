@@ -5,6 +5,7 @@ import Benefits from './Benefits';
 import './FeaturesContainer.css'; 
 import './Login.css'
 import Testimonials from './Testimonials';
+import Banner from './Banner';
 
 const MainPage = () => {
     const topics = [
@@ -48,6 +49,9 @@ const MainPage = () => {
             </section>
             <section className="testimonials-section">
                 <Testimonials />
+            </section>
+            <section className='banner-section'>
+                <Banner />
             </section>
             <section className="topics-section">
                 <TopicsCovered topics={topics} />
