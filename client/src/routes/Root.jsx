@@ -3,8 +3,6 @@ import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import '../styles/global.css'
-import Landing from '../components/Landing'
-import MainPage from '../components/MainPage'
 
 export const Root = ({ admin }) => {
   const { user } = useAuth0()
@@ -15,8 +13,6 @@ export const Root = ({ admin }) => {
 
   return (
     <>
-      <Navbar />
-      <Landing />
       <Outlet />
     </>
   )

@@ -5,8 +5,8 @@ import {
 import { Root } from "../routes/Root";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { MemberDashboard } from '../routes/MemberDashboard';
-import { AdminDashboard } from '../routes/AdminDashboard';
-import MainPage from '../components/MainPage';  
+import { AdminDashboard } from '../routes/AdminDashboard'; 
+import Landing from "../components/Landing";
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />  
+        element: <Landing />  
       },
       {
         path: 'member-dashboard',
