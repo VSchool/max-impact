@@ -40,7 +40,7 @@
 }
 
 .btn-landing {
-  width: 186px;
+  width: 186px !important;
 }
 
 @media (max-width: 992px) {
@@ -51,7 +51,7 @@
 
 @media (max-width: 768px) {
    .btn-landing {
-    width: 100%;
+    width: 100% !important;
   }
   
   .hero {
