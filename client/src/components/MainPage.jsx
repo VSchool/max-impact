@@ -8,6 +8,7 @@ import Testimonials from './Testimonials';
 import Banner from './Banner';
 import ImageTextBlock from './ImageTextBlock';
 import About from './About';
+import FrequentlyAskedQuestions from './FrequentlyAskedQuestions';
 
 const MainPage = () => {
     const topics = [
@@ -64,6 +65,9 @@ const MainPage = () => {
             </section>
             <section className='about-section'>
                 <About />
+            </section>
+            <section className='faq-section'>
+                <FrequentlyAskedQuestions />
             </section>
             
         </div>
