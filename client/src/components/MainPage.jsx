@@ -7,6 +7,7 @@ import './Login.css'
 import Testimonials from './Testimonials';
 import Banner from './Banner';
 import ImageTextBlock from './ImageTextBlock';
+import About from './About';
 
 const MainPage = () => {
     const topics = [
@@ -58,9 +59,11 @@ const MainPage = () => {
                 <ImageTextBlock />
             </section>
 
-
             <section className="topics-section">
                 <TopicsCovered topics={topics} />
+            </section>
+            <section className='about-section'>
+                <About />
             </section>
             
         </div>
