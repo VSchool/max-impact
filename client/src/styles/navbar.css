@@ -45,6 +45,10 @@
   color: #ddd;
 }
 
+.burger {
+  display: none;
+}
+
 .navbar-burger {
   display: none;
   background-color: var(--primary-c);
@@ -95,6 +99,10 @@
   .navbar {
     justify-content: space-between;
     padding: 0px 0px 0px 0px;
+  }
+
+  .burger {
+    display: block;
   }
 
   .navbar-burger {

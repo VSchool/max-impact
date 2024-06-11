@@ -31,7 +31,9 @@ const Navbar = ({ links }) => {
           <Button>Log in</Button>
         </li>
       </ul>
-      <Burger links={links} />
+      <div className="burger">
+        <Burger links={links} />
+      </div>
     </nav>
   )
 }
