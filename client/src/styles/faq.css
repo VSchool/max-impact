@@ -57,8 +57,12 @@
   margin-left: 40px;
 }
 
-.show {
-  display: block !important;
+.qa-answer-show {
+  font-size: 16px;
+  font-weight: 400;
+  display: none;
+  margin-left: 40px;
+  display: block;
 }
 
 @media (max-width: 768px) {

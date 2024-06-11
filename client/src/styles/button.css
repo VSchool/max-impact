@@ -1,14 +1,17 @@
 .button {
-  padding: 16px;
   color: var(--text-dark);
   font-weight: bold;
   font-size: 16px;
   background-color: var(--primary-b);
   border: none;
-  border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.default-btn {
   width: 80px;
+  padding: 16px;
+  border-radius: 12px;
 }
 
 .button:hover {

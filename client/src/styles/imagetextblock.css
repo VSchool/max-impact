@@ -56,7 +56,7 @@
 
     .block-container > * {
         flex: 1 1 100%;
-        padding: 8px !important;
+        padding: 8px;
     }
 
     .block-image img {

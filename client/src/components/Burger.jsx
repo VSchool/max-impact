@@ -19,7 +19,7 @@ const Burger = ({ links }) => {
         <div className="dropdown">
           <ul className="dropdown-list">
             {links.map((link, index) => (
-              <li key={index}>
+              <li className='dropdown-list-li' key={index}>
                 <a href={link.url}>{link.label}</a>
               </li>
             ))}
