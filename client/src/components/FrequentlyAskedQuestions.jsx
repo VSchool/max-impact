@@ -26,6 +26,7 @@ const FrequentlyAskedQuestions = () => {
     },
     {
       question: 'Will I receive a certificate upon completion of the program?',
+      answer: 'ANSWER',
     },
     {
       question: 'How do I track my progress through the program?',
