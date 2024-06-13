@@ -18,7 +18,7 @@ const QuestionAndAnswer = ({ num, question, answer }) => {
           <img alt="dropdown" src={dropdown} />
         </div>
       </div>
-      <div className={dropdownToggle ? 'qa-answer show' : 'qa-answer'}>
+      <div className={dropdownToggle ? 'qa-answer-show' : 'qa-answer'}>
         {answer}
       </div>
     </div>
