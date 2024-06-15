@@ -80,3 +80,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.feature-button {
+    width: 229px;
+    border-radius: 12px;
+    padding: 16px;
+}

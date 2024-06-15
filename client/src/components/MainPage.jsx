@@ -9,6 +9,7 @@ import Banner from './Banner';
 import ImageTextBlock from './ImageTextBlock';
 import About from './About';
 import FrequentlyAskedQuestions from './FrequentlyAskedQuestions';
+import Button from './global/Button';
 
 const MainPage = () => {
     const topics = [
@@ -47,6 +48,7 @@ const MainPage = () => {
                             buttonText="Learn More"
                         />
                     </div>
+                    <Button style='feature-button' >More about our features</Button>
                 </div>
             </section>
             </section>
