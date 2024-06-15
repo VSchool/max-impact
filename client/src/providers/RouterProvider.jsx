@@ -11,6 +11,7 @@ import Login from "../components/Login";
 import SignUp from "../components/SignUp";
 
 import LessonsDisplayArea from "../components/LessonsDisplayArea";
+import Registration from "../components/Registration";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: '/login',  // Add the login route
     element: <Login />
+  },
+  {
+    path: '/registration',
+    element: <Registration />
   },
   {
     path: '/signup',  // Add the login route
