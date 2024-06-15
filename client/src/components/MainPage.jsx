@@ -48,7 +48,9 @@ const MainPage = () => {
                             buttonText="Learn More"
                         />
                     </div>
-                    <Button style='feature-button' >More about our features</Button>
+                    <div className='feature-button-container'>
+                        <Button style='feature-button' >More about our features</Button>
+                    </div>
                 </div>
             </section>
             </section>

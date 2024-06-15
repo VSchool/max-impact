@@ -53,3 +53,11 @@
     width: 100%;
     max-width: 1248px;
 }
+
+@media (max-width: 768px) {
+    .features-cards-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
