@@ -9,6 +9,7 @@ import Banner from './Banner';
 import ImageTextBlock from './ImageTextBlock';
 import About from './About';
 import FrequentlyAskedQuestions from './FrequentlyAskedQuestions';
+import Button from './global/Button';
 
 const MainPage = () => {
     const topics = [
@@ -46,6 +47,9 @@ const MainPage = () => {
                             description="Get top-quality training at an unbeatable price. Our program offers high-value learning experiences that deliver impactful results without breaking the bank."
                             buttonText="Learn More"
                         />
+                    </div>
+                    <div className='feature-button-container'>
+                        <Button style='feature-button' >More about our features</Button>
                     </div>
                 </div>
             </section>
