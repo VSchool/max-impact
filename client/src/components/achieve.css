@@ -1,0 +1,131 @@
+/* achieve.css */
+
+.achieve-page {
+    position: absolute;
+    width: 1036px;
+    height: 1816px;
+    left: 308px;
+    top: 163px;
+    overflow-y: scroll;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+    border-radius: 16px 16px 0px 0px;
+  }
+  
+  /* Greeting Section */
+  .achieve-greeting-section {
+    position: absolute;
+    top: 40px;
+    left: 106px;
+    width: 120px;
+    height: 44px;
+  }
+  
+  .achieve-dashboard-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    color: #000000;
+  }
+  
+  /* Quarter Buttons Section */
+  .quarter-buttons-section {
+    position: absolute;
+    top: 140px;
+    width: 1036px;
+    height: 140px;
+    display: flex;
+    align-items: flex-start;
+    padding: 48px 106px;
+  }
+  
+  .quarter-buttons-container {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .quarter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 44px;
+    padding: 16px;
+    gap: 8px;
+    background: #61537B;
+    border-radius: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .quarter-button:nth-child(2),
+  .quarter-button:nth-child(3),
+  .quarter-button:nth-child(4) {
+    background: none;
+    border: 2px solid #61537B;
+    color: #61537B;
+  }
+  
+  /* Course Videos Section */
+  .archieve-course-videos-section {
+    position: absolute;
+    top: 280px;
+    width: 1036px;
+    height: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    
+  }
+  
+  .top-nav {
+    width: 824px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 34px;
+  }
+  
+  .section-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+  
+  .navigation-arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    padding-top: 44px;
+  }
+  
+  .left-arrow,
+  .right-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .archieve-videos-container {
+    width: 717px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px 24px;
+  }
+  

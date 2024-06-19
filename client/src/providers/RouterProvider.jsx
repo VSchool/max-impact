@@ -9,8 +9,10 @@ import { AdminDashboard } from '../routes/AdminDashboard';
 import MainPage from '../components/MainPage';  
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
-
+import Achieve from "../components/Achieve";
 import LessonsDisplayArea from "../components/LessonsDisplayArea";
+import AdminPage from "../components/AdminPage";
+import ArchieveUser from "../components/ArchieveUser";
 
 
 const router = createBrowserRouter([
@@ -39,17 +41,30 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/login',  // Add the login route
+    path: '/login',  
     element: <Login />
   },
   {
-    path: '/signup',  // Add the login route
+    path: '/signup',  
     element: <SignUp />
   },
   {
-    path: '/lessons',  // Add the lessons path
+    path: '/lessons',  
     element: <LessonsDisplayArea />
   },
+  {
+    path: '/Alessons',  
+    element: <AdminPage />
+  },
+  {
+    path: '/archive',  
+    element: <Achieve />
+  },
+  {
+    path: '/archiveuser',  
+    element: <ArchieveUser />
+  }
+  
 ]);
 
 export const RouteProvider = withAuthenticationRequired(() => {

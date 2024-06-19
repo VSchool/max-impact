@@ -1,0 +1,122 @@
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 16px 16px 0 0;
+    padding: 10px 20px 20px 80px;
+    margin-left: 220px; 
+    min-height: 100vh;
+}
+
+/* Admin Greeting Section */
+.admin-greeting-section {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
+    padding: 20px;
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    
+}
+
+.admin-dashboard-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    color: #000000;
+}
+
+/* Course Upload Section */
+.course-upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+   
+}
+
+.section-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.class-name-input {
+    width: 60%;
+    height: 46px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 9px;
+    border: 1px solid #CCC;
+  }
+  
+
+.upload-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.upload-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px; 
+    padding: 20px; 
+    background-color: #F0F0F0;
+    border: 1px solid #CCC;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px; 
+}
+
+.upload-button img {
+    margin-bottom: 10px;
+    width: 32px; 
+    height: 32px; 
+}
+
+.publish-button {
+    width: 200px; 
+    padding: 10px; 
+    background-color: #DC9E47;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px; 
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 20px; 
+}
+
+/* Uploaded Courses Section */
+.uploaded-courses-section {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
+    padding: 20px;
+    border-radius: 16px;
+    width: 100%;
+    
+}
+
+.lessons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+
+
