@@ -80,3 +80,28 @@
     justify-content: center;
     align-items: center;
 }
+
+.feature-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+}
+
+.feature-button {
+    width: 229px;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        width: 100%;
+        margin: 15px;
+    }
+
+    .feature-button {
+        width: 100%;
+    }
+}

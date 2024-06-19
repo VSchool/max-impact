@@ -1,13 +1,24 @@
 import '../styles/navbar.css'
 import logo from '../assets/logo.png'
+import mobileLogo from '../assets/mobile-logo.png'
 import Button from './global/Button'
+import Burger from './Burger'
 
 const Navbar = ({ links }) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <a href="#">
-          <img src={logo} alt="Max Impact Council" className="logo" />
+          <img
+            src={logo}
+            alt="Max Impact Council"
+            className="logo logo-desktop"
+          />
+          <img
+            src={mobileLogo}
+            alt="Max Impact Council"
+            className="logo logo-mobile"
+          />
         </a>
       </div>
       <ul className="navbar-links">
@@ -20,7 +31,9 @@ const Navbar = ({ links }) => {
           <Button>Log in</Button>
         </li>
       </ul>
-      <div className="navbar-burger">BURGER</div>
+      <div className="burger">
+        <Burger links={links} />
+      </div>
     </nav>
   )
 }

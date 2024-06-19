@@ -5,15 +5,15 @@ import {
 import { Root } from "../routes/Root";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { MemberDashboard } from '../routes/MemberDashboard';
-import { AdminDashboard } from '../routes/AdminDashboard';
-import MainPage from '../components/MainPage';  
+import { AdminDashboard } from '../routes/AdminDashboard'; 
+import Landing from "../components/Landing";
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
 import Achieve from "../components/Achieve";
 import LessonsDisplayArea from "../components/LessonsDisplayArea";
+import Registration from "../components/Registration";
 import AdminPage from "../components/AdminPage";
 import ArchieveUser from "../components/ArchieveUser";
-
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />  
+        element: <Landing />  
       },
       {
         path: 'member-dashboard',
@@ -45,7 +45,11 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: '/signup',  
+    path: '/registration',
+    element: <Registration />
+  },
+  {
+    path: '/signup',  // Add the login route
     element: <SignUp />
   },
   {

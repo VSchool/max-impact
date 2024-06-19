@@ -1,0 +1,72 @@
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 48px 0px 48px 0px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 32px;
+    padding: 0px 24px 0px 24px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1248px;
+    margin: 48px 0px 48px 0px;
+}
+
+.testimonial {
+    width: 350px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial > * {
+    margin: 7px;
+}
+
+.testimonial-img {
+    width: 150px; /* Set the width of the container */
+    height: 150px; /* Set the height of the container */
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Hide the overflow to ensure the image fits within the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 14px 24px 0px #00000040;
+}
+
+.testimonial-img img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.testimonial-biography {
+    opacity: 55%;
+    font-style: italic;
+    font-size: 16px;
+    width: 302px;
+    line-height: 22px;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-container {
+        margin: 24px 0px 24px 0px;
+    }
+}

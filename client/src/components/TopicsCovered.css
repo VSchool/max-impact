@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
+    padding: 40px 0px 40px 0px;
     gap: 20px;
     width: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
@@ -62,4 +62,14 @@
     line-height: 22px;
     color: #4A3F66;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .topics-icons-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 14px;
+    }
 }

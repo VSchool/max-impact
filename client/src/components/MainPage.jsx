@@ -4,6 +4,12 @@ import TopicsCovered from './TopicsCovered';
 import Benefits from './Benefits';
 import './FeaturesContainer.css'; 
 import './Login.css'
+import Testimonials from './Testimonials';
+import Banner from './Banner';
+import ImageTextBlock from './ImageTextBlock';
+import About from './About';
+import FrequentlyAskedQuestions from './FrequentlyAskedQuestions';
+import Button from './global/Button';
 
 const MainPage = () => {
     const topics = [
@@ -42,11 +48,30 @@ const MainPage = () => {
                             buttonText="Learn More"
                         />
                     </div>
+                    <div className='feature-button-container'>
+                        <Button style='feature-button' >More about our features</Button>
+                    </div>
                 </div>
             </section>
             </section>
+            <section className="testimonials-section">
+                <Testimonials />
+            </section>
+            <section className='banner-section'>
+                <Banner />
+            </section>
+            <section className='imagetextblock-section'>
+                <ImageTextBlock />
+            </section>
+
             <section className="topics-section">
                 <TopicsCovered topics={topics} />
+            </section>
+            <section className='about-section'>
+                <About />
+            </section>
+            <section className='faq-section'>
+                <FrequentlyAskedQuestions />
             </section>
             
         </div>
