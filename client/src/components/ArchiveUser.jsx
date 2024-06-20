@@ -1,11 +1,13 @@
 import React from 'react';
-import Sidebar from './Sidebar'; 
+import Sidebar from './Sidebar';
 import './achieve.css'; 
 import Lesson from './Lessons';
 
-const Achieve = () => {
 
-const isAdmin  = true
+const ArchiveUser = () => {
+
+  const isAdmin = false
+
 
     const lessons = [
         {
@@ -24,9 +26,9 @@ const isAdmin  = true
 
   return (
     <div className="achieve-page">
-       <Sidebar isAdmin={true} />
+      <Sidebar />
       <section className="achieve-greeting-section">
-        <h1 className="achieve-dashboard-title">Achieve</h1>
+        <h1 className="achieve-dashboard-title">Archive</h1>
       </section>
       <section className="quarter-buttons-section">
         <div className="quarter-buttons-container">
@@ -54,4 +56,4 @@ const isAdmin  = true
   );
 };
 
-export default Achieve;
+export default ArchiveUser;

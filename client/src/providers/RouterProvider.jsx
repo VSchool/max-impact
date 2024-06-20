@@ -9,11 +9,11 @@ import { AdminDashboard } from '../routes/AdminDashboard';
 import Landing from "../components/Landing";
 import Login from "../components/Login";
 import SignUp from "../components/SignUp";
-import Achieve from "../components/Achieve";
+import Archive from "../components/Archive";
 import LessonsDisplayArea from "../components/LessonsDisplayArea";
 import Registration from "../components/Registration";
 import AdminPage from "../components/AdminPage";
-import ArchieveUser from "../components/ArchieveUser";
+import ArchiveUser from "../components/ArchiveUser";
 
 const router = createBrowserRouter([
   {
@@ -62,11 +62,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/archive',  
-    element: <Achieve />
+    element: <Archive />
   },
   {
     path: '/archiveuser',  
-    element: <ArchieveUser />
+    element: <ArchiveUser />
   }
   
 ]);
