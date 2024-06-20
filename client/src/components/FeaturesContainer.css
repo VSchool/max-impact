@@ -11,8 +11,6 @@
     max-width: 1440px;
     height: auto;
     margin: 0 auto;
-
-    /* White/White */
     background: #FFFFFF;
 }
 
@@ -45,11 +43,10 @@
     /* Auto layout */
     display: flex;
     flex-direction: row;
-    align-items: stretch;  /* Ensures all items have the same height */
+    align-items: stretch;  
     padding: 0px;
     gap: 24px;
-    justify-content: space-between;  /* Distribute space evenly */
-
+    justify-content: space-between;  
     width: 100%;
     max-width: 1248px;
 }

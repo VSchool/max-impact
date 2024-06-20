@@ -5,12 +5,11 @@
     left: 308px;
     top: 163px;
     overflow-y: scroll;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
     border-radius: 16px 16px 0px 0px;
 }
 
 .user-greeting-section {
-    background-color: #E5E5E5;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
     padding: 20px;
 }
 
@@ -46,11 +45,12 @@
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
+    justify-content: flex-start;
     padding: 24px;
     gap: 40px 24px;
 }
 
 .recent-course-videos-section {
-    background-color: #E5E5E5;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
     padding: 20px;
 }

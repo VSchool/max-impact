@@ -5,7 +5,6 @@ import MainPage from './MainPage'
 const Landing = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <MainPage />
     </>

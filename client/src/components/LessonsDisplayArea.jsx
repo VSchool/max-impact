@@ -2,6 +2,7 @@
 import React from 'react';
 import Lesson from './Lessons';
 import './LessonsDisplayArea.css';
+import Sidebar from './Sidebar';
 
 const lessons = [
     {
@@ -16,12 +17,12 @@ const lessons = [
       attachment: "Download Attachment",
       imgSrc: "/src/assets/icons/video_card.svg",
     },
-    // Add more lessons as needed
   ];
   
   const LessonsDisplayArea = () => {
     return (
       <div className="lessons-display-area">
+        <Sidebar />
         <section className="user-greeting-section">
           <h1 className="dashboard-title">Hello, [User Name]</h1>
         </section>

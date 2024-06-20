@@ -1,10 +1,12 @@
+/* AdminLesson.css */
 .lesson {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 8px;
+    gap: 8px;
     width: 204px;
-    height: 240px;
+    height: 222px;
     border-radius: 16px;
   }
   
@@ -13,16 +15,15 @@
     display: flex;
     justify-content: center;
     position: relative;
-    border-radius: 8px 8px 0px 0px; 
-    overflow: hidden; 
-}
+  }
   
-.lesson-image {
-    width: 100%; 
+  .lesson-image {
+    width: 188px;
     height: 128px;
     border-radius: 8px 8px 0px 0px;
-}
-.time-button {
+  }
+  
+  .time-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,18 +31,25 @@
     position: absolute;
     width: 36px;
     height: 16px;
-    top: 85px; 
-    left: 130px; 
+    top: 103px;
+    left: 130px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 4px;
-    
-}
-
+  }
+  
+  .time-text {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+  }
+  
   .lesson-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left:  8px;
+    padding-left: 8px;
     margin-left: 5px;
   }
   
@@ -53,7 +61,7 @@
   }
   
   .lesson-title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
@@ -61,7 +69,7 @@
   }
   
   .lesson-date {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
@@ -69,33 +77,7 @@
     padding-bottom: 6px;
   }
   
-  .lesson-attachment {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    border-bottom: 1px solid #0074CC;
-  }
   
-  .download-link {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    color: #0074CC;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  
-  .download-icon {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .heart-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 8px;
-  }
+ 
+
   

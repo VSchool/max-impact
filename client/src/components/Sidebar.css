@@ -1,0 +1,43 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    width: 284px;
+    height: 100vh; 
+    left: 0;
+    top: 0;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
+    z-index: -1;
+    padding-top: 70px;
+}
+.admin-sidebar {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
+  }
+  
+  .user-sidebar {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+  }
+  
+
+.sidebar-item {
+    position: relative;
+    width: 100%;
+    height: 22px;
+    left: 67px; 
+    margin-bottom: 30px; 
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    cursor: pointer;
+    list-style: none;
+}
+
+.sidebar-item:hover {
+    color: #0074cc;
+}
+
+.sidebar-list{
+    padding-top: 200px;
+}
