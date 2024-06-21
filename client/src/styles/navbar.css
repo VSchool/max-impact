@@ -5,10 +5,11 @@
   background-color: var(--primary-a);
   color: var(--text-light);
   padding: 8px 0px 8px 0px;
+  height: 144px;
 }
 
 .logo {
-  height: 107px;
+  height: 88px;
   width: auto;
 }
 
@@ -101,6 +102,7 @@
   .navbar {
     justify-content: space-between;
     padding: 0px 0px 0px 0px;
+    height: auto;
   }
 
   .burger {
