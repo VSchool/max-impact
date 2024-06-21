@@ -52,9 +52,10 @@
 
 .navbar-burger {
   display: none;
-  background-color: var(--primary-c);
+  background-color: none;
   height: 68px;
   width: 64px;
+  
 }
 
 .dropdown {
