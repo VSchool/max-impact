@@ -103,7 +103,7 @@
   .navbar {
     justify-content: space-between;
     padding: 0px 0px 0px 0px;
-    height: auto;
+    height: 68px;
   }
 
   .burger {
@@ -127,5 +127,7 @@
 
   .logo-mobile {
     display: block;
+    height: 40px;
+    width: auto;
   }
 }
