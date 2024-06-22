@@ -130,4 +130,12 @@
     height: 40px;
     width: auto;
   }
+
+  .navbar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 7px;
+    height: 100%;
+  }
 }
