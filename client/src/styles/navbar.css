@@ -5,10 +5,11 @@
   background-color: var(--primary-a);
   color: var(--text-light);
   padding: 8px 0px 8px 0px;
+  height: 144px;
 }
 
 .logo {
-  height: 107px;
+  height: 88px;
   width: auto;
 }
 
@@ -51,9 +52,10 @@
 
 .navbar-burger {
   display: none;
-  background-color: var(--primary-c);
+  background-color: none;
   height: 68px;
   width: 64px;
+  
 }
 
 .dropdown {
@@ -101,6 +103,7 @@
   .navbar {
     justify-content: space-between;
     padding: 0px 0px 0px 0px;
+    height: 68px;
   }
 
   .burger {
@@ -124,5 +127,15 @@
 
   .logo-mobile {
     display: block;
+    height: 40px;
+    width: auto;
+  }
+
+  .navbar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 7px;
+    height: 100%;
   }
 }
