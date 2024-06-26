@@ -22,6 +22,9 @@
     color: #000000;
     padding: 15px;
 }
+.hamburger{
+    display: none;
+}
 
 .favorites-section {
     background-color: #FFFFFF;
@@ -53,4 +56,60 @@
 .recent-course-videos-section {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
     padding: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .lessons-display-area {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 76px;
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+
+    .user-greeting-section, .recent-course-videos-section {
+        text-align: center;
+    }
+
+    .dashboard-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        line-height: 28px;
+        padding-left: 0;
+    }
+
+    .lessons-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display:block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #000;
+    }
+
+    .sidebar {
+        width: 70%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
 }

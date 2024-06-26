@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from './Sidebar'; 
 import './achieve.css'; 
 import Lesson from './Lessons';
 
 const Archive = () => {
+
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
 
 const isAdmin  = true
 
@@ -24,7 +29,11 @@ const isAdmin  = true
 
   return (
     <div className="achieve-page">
-       <Sidebar isAdmin={true} />
+      <button className="hamburger" onClick={toggleSidebar}>
+        ☰
+      </button>
+      <Sidebar isAdmin={isAdmin} isOpen={isSidebarOpen} />
+       <div className='test'>
       <section className="achieve-greeting-section">
         <h1 className="achieve-dashboard-title">Archive</h1>
       </section>
@@ -37,19 +46,18 @@ const isAdmin  = true
         </div>
       </section>
       <section className="archieve-course-videos-section">
-        <div className="top-nav">
-          <h2 className="section-title">Q1- Jan-Feb 2024</h2>
-          <div className="navigation-arrows">
-            <div className="left-arrow">{"<"}</div>
-            <div className="right-arrow">{">"}</div>
+      <div className="top-nav">
+          <h2 className="section_title">Q1- Jan-Feb 2024</h2>
+          <div className="left-arrow">{"<"}</div>
+          <div className="right-arrow">{">"}</div>
           </div>
-        </div>
         <div className="archieve-videos-container">
           {lessons.map((lesson, index) => (
           <Lesson key={index} {...lesson} isAdmin={isAdmin} />
           ))}
         </div>
       </section>
+      </div>
     </div>
   );
 };

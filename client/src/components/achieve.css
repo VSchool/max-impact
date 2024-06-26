@@ -1,131 +1,228 @@
-/* achieve.css */
-
+.test{
+  width: 100%;
+}
 .achieve-page {
-    position: absolute;
-    width: 1036px;
-    height: 1816px;
-    left: 308px;
-    top: 163px;
-    overflow-y: scroll;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
-    border-radius: 16px 16px 0px 0px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 240px;
+  padding: 10px 20px 20px 80px;
+  min-height: 100vh;
+  overflow-y: auto;
+  background:#FFFFFF
+  border-radius: 16px 16px 0px 0px;
+}
+
+.achieve-greeting-section {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.achieve-dashboard-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #000000;
+  padding: 40px;
+}
+
+.quarter-buttons-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
   
-  /* Greeting Section */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+}
+
+.quarter-buttons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.quarter-button {
+  width: 82px;
+  height: 44px;
+  background: #61537B;
+  border-radius: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.quarter-button:nth-child(2),
+.quarter-button:nth-child(3),
+.quarter-button:nth-child(4) {
+  background: none;
+  border: 2px solid #61537B;
+  color: #61537B;
+}
+
+.archieve-course-videos-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+  padding-bottom: 100%;
+}
+
+.top-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top-nav .left-arrow {
+  margin-left: 65%;
+  order: 0;
+}
+.top-nav .section_title {
+  order: -1; 
+}
+.top-nav .right-arrow {
+  padding-left: 60px;
+  order: 1; 
+}
+.section-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+}
+
+.left-arrow,
+.right-arrow {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.archieve-videos-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-thumbnail-container {
+  width: 200px;
+  height: auto;
+  border-radius: 16px;
+}
+
+
+
+
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .achieve-page {
+      min-height: 100vh;
+      left: 0;
+      top: 84px;
+      overflow-y: scroll;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+      border-radius: 0;
+      padding: 10px;
+      margin-left: 0;
+  }
+
   .achieve-greeting-section {
-    position: absolute;
-    top: 40px;
-    left: 106px;
-    width: 120px;
-    height: 44px;
+      top: 20px;
+      left: 20px;
+      height: auto;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
   }
-  
+
   .achieve-dashboard-title {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 44px;
-    letter-spacing: -0.03em;
-    color: #000000;
+    padding-top: 20px;
+      font-size: 24px;
+      line-height: 32px;
   }
-  
-  /* Quarter Buttons Section */
+
   .quarter-buttons-section {
-    position: absolute;
-    top: 140px;
-    width: 1036px;
-    height: 140px;
-    display: flex;
-    align-items: flex-start;
-    padding: 48px 106px;
+      top: 80px;
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px 10px;
   }
-  
+
   .quarter-buttons-container {
-    display: flex;
-    gap: 40px;
+      gap: 8px;
   }
-  
+
   .quarter-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 82px;
-    height: 44px;
-    padding: 16px;
-    gap: 8px;
-    background: #61537B;
-    border-radius: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
+      width: 70px;
+      height: 36px;
+      font-size: 14px;
   }
-  
-  .quarter-button:nth-child(2),
-  .quarter-button:nth-child(3),
-  .quarter-button:nth-child(4) {
-    background: none;
-    border: 2px solid #61537B;
-    color: #61537B;
-  }
-  
-  /* Course Videos Section */
+
   .archieve-course-videos-section {
-    position: absolute;
-    top: 280px;
-    width: 1036px;
-    height: 768px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-    
+      top: 140px;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 10px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #FFFFFF;
+      border-radius: 16px;
   }
-  
+
   .top-nav {
-    width: 824px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 34px;
-  }
-  
-  .section-title {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-    letter-spacing: -0.02em;
-    color: #000000;
-  }
-  
-  .navigation-arrows {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 64px;
-    padding-top: 44px;
   }
-  
-  .left-arrow,
-  .right-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
+
+  .top-nav .left-arrow {
+    margin-left: 0;
+    order: -1; 
+  }
+  .top-nav .section_title {
+    order: 0;
+    margin: 0 10px; 
+  }
+  .top-nav .right-arrow {
+    order: 1; 
+  }
+}
+
+  .left-arrow, .right-arrow {
     font-size: 24px;
     cursor: pointer;
   }
-  
-  .archieve-videos-container {
-    width: 717px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px 24px;
+  .section_title {
+    font-size: 20px;
+    margin: 0 10px; 
+    margin-top: 0;
   }
-  
+ 
+  .archieve-videos-container {
+      width: 100%;
+      max-width: 717px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+  }
+
+  .video-thumbnail-container {
+      width: 90%;
+      height: auto;
+  }
+
+
+
+
+
