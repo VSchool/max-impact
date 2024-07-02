@@ -1,0 +1,211 @@
+.course-edit-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+    max-width: 734px;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 16px 0px 0px 0px;
+    overflow-y: auto;
+    box-sizing: border-box;margin: 0 auto; /* Center the popup horizontally */
+}
+
+.navigation-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.back-btn, .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.class-name-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.course-upload-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.video-thumbnail-container, .pdf-thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    width: 48%;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.watched-video-card, .pdf-preview {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.video-placeholder-image, .pdf-preview-placeholder {
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.edit-trash-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.class-info, .pdf-info {
+    text-align: center;
+}
+
+.class-title, .pdf-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.upload-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.publish-btn {
+    width: 90%;
+    padding: 12px;
+    background: #DC9E47;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .course-edit-popup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px;
+        gap: 24px;
+        position: relative;
+        width: 100%;
+        max-width: 734px;
+        height: auto;
+        background: #FFFFFF;
+        border-radius: 16px 0px 0px 0px;
+        overflow-y: auto;
+        box-sizing: border-box;margin: 0 auto; /* Center the popup horizontally */
+    }
+    
+    .navigation-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 24px;
+    }
+    
+    .back-btn, .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .class-name-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #CCC;
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    .course-upload-container {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+    }
+    
+    .video-thumbnail-container, .pdf-thumbnail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+        gap: 8px;
+        width: 48%;
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+    
+    .watched-video-card, .pdf-preview {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    
+    .video-placeholder-image, .pdf-preview-placeholder {
+        width: 100%;
+        border-radius: 8px 8px 0px 0px;
+    }
+    
+    .edit-trash-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border-radius: 10%;
+        cursor: pointer;
+    }
+    
+    .class-info, .pdf-info {
+        text-align: center;
+    }
+    
+    .class-title, .pdf-title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .upload-date {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .publish-btn {
+        width: 90%;
+        padding: 12px;
+        background: #DC9E47;
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #000;
+        cursor: pointer;
+    }
+
+
+
+}
