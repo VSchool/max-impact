@@ -8,7 +8,7 @@ export const MemberDashboard = () => {
     const { getAllFileMetadata } = useFileMetadataContext();
 
     useEffect(() => {
-        getAllFileMetadata()
+        // getAllFileMetadata()
     }, [])
 
     return (

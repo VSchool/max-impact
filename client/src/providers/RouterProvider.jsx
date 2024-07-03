@@ -23,10 +23,24 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />  
+      }
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <MemberDashboard />
       },
       {
-        path: 'member-dashboard',
-        element: <MemberDashboard />
+        path: 'lessons',
+        element: <LessonsDisplayArea />
+      },
+      {
+        path: 'archive',
+        element: <Archive />
       }
     ]
   },
@@ -38,37 +52,16 @@ const router = createBrowserRouter([
         index: true,
         element: <AdminDashboard />,
       },
+      {
+        path: 'lessons',
+        element: <AdminPage />
+      },
+      {
+        path: 'archive',
+        element: <Archive />
+      }
     ],
-  },
-  {
-    path: '/login',  
-    element: <Login />
-  },
-  {
-    path: '/registration',
-    element: <Registration />
-  },
-  {
-    path: '/signup',  // Add the login route
-    element: <SignUp />
-  },
-  {
-    path: '/lessons',  
-    element: <LessonsDisplayArea />
-  },
-  {
-    path: '/Alessons',  
-    element: <AdminPage />
-  },
-  {
-    path: '/archive',  
-    element: <Archive />
-  },
-  {
-    path: '/archiveuser',  
-    element: <ArchiveUser />
   }
-  
 ]);
 
 export const RouteProvider = withAuthenticationRequired(() => {
