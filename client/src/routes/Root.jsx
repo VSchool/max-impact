@@ -4,6 +4,22 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import '../styles/global.css'
 import Navbar from '../components/Navbar'
 
+const landingLinks = [
+    { label: 'Home', link: '#' },
+    { label: 'Courses', link: '#' },
+    { label: 'Contact Us', link: '#' },
+  ]
+const dashboardLinks = [
+    { label: 'Dashboard', link: '#' },
+    { label: 'Courses', link: '#' },
+    { label: 'Contact Us', link: '#' },
+  ]
+const adminLinks = [
+    { label: 'Admin', link: '#' },
+    { label: 'Courses', link: '#' },
+    { label: 'Contact Us', link: '#' },
+  ]
+
 export const Root = ({ admin }) => {
   const { user } = useAuth0()
   const navigate = useNavigate()
@@ -13,7 +29,7 @@ export const Root = ({ admin }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user} links={user && user.admin ? adminLinks : user ? dashboardLinks : landingLinks} />
       <Outlet />
     </>
   )

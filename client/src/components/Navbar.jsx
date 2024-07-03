@@ -3,8 +3,9 @@ import logo from '../assets/logo.png'
 import mobileLogo from '../assets/mobile-logo.png'
 import Button from './global/Button'
 import Burger from './Burger'
+import { useEffect } from 'react'
 
-const Navbar = ({ links }) => {
+const Navbar = ({ links, user }) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -28,7 +29,7 @@ const Navbar = ({ links }) => {
           </li>
         ))}
         <li>
-          <Button>Log in</Button>
+          <Button>{user ? 'Logout' : 'Login'}</Button>
         </li>
       </ul>
       <div className="burger">
