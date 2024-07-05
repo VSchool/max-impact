@@ -4,21 +4,38 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import '../styles/global.css'
 import Navbar from '../components/Navbar'
 
-const landingLinks = [
+const landingLinks = {
+  main: [
     { label: 'Home', url: '/' },
     { label: 'Courses', url: '/dashboard/lessons' },
     { label: 'Contact Us', url: '/' },
-  ]
-const dashboardLinks = [
-    { label: 'Dashboard', url: '/dashboard' },
+  ],
+  sidebar: []
+}
+const dashboardLinks = {
+  main: [
+    { label: 'Home', url: '/' },
     { label: 'Courses', url: '/dashboard/lessons' },
     { label: 'Contact Us', url: '/' },
+  ],
+  sidebar: [
+    {
+      label: "Archive", url: '/dashboard/archive'
+    }
   ]
-const adminLinks = [
-    { label: 'Admin', url: '/admin' },
+}
+const adminLinks = {
+  main: [
+    { label: 'Home', url: '/' },
     { label: 'Courses', url: '/admin/lessons' },
-    { label: 'Archive', url: '/admin/archive' },
+    { label: 'Contact us', url: '/' },
+  ],
+  sidebar: [
+    {
+      label: 'Archive', url: '/admin/archive'
+    }
   ]
+}
 
 export const Root = ({ admin }) => {
   const { user } = useAuth0()

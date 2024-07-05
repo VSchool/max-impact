@@ -34,7 +34,7 @@ const Navbar = ({ links, user }) => {
         </Link>
       </div>
       <ul className="navbar-links">
-        {links.map((link, index) => (
+        {links.main.map((link, index) => (
           <li key={index}>
             <Link to={link.url}>{link.label}</Link>
           </li>
@@ -44,7 +44,7 @@ const Navbar = ({ links, user }) => {
         </li>
       </ul>
       <div className="burger">
-        <Burger user={user} handleLoginLogout={handleLoginLogout} links={links} />
+        <Burger user={user} handleLoginLogout={handleLoginLogout} links={[...links.main, ...links.sidebar]} />
       </div>
     </nav>
   )
