@@ -3,7 +3,7 @@ import burger from '../assets/burger.svg'
 import x from '../assets/x.svg'
 import Button from './global/Button'
 
-const Burger = ({ links }) => {
+const Burger = ({ links, handleLoginLogout, user }) => {
   const [showMenu, setShowMenu] = useState(false)
 
   const handleToggle = () => {
@@ -24,7 +24,7 @@ const Burger = ({ links }) => {
               </li>
             ))}
             <li className="dropdown-btn-li">
-              <Button style="dropdown-btn">Log in</Button>
+              <Button onClick={handleLoginLogout} style="dropdown-btn">{user ? 'Logout' : "Login"}</Button>
             </li>
           </ul>
         </div>

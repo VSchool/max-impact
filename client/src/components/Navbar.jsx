@@ -44,7 +44,7 @@ const Navbar = ({ links, user }) => {
         </li>
       </ul>
       <div className="burger">
-        <Burger links={links} />
+        <Burger user={user} handleLoginLogout={handleLoginLogout} links={links} />
       </div>
     </nav>
   )
