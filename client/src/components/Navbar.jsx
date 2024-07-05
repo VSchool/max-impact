@@ -3,13 +3,24 @@ import logo from '../assets/logo.png'
 import mobileLogo from '../assets/mobile-logo.png'
 import Button from './global/Button'
 import Burger from './Burger'
-import { useEffect } from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const Navbar = ({ links, user }) => {
+  const { logout } = useAuth0();
+  const navigate = useNavigate()
+
+  const handleLoginLogout = () => {
+    if (user) {
+      logout()
+    } else {
+      navigate('/dashboard')
+    }
+  }
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="#">
+        <Link to="/">
           <img
             src={logo}
             alt="Max Impact Council"
@@ -20,16 +31,16 @@ const Navbar = ({ links, user }) => {
             alt="Max Impact Council"
             className="logo logo-mobile"
           />
-        </a>
+        </Link>
       </div>
       <ul className="navbar-links">
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.url}>{link.label}</a>
+            <Link to={link.url}>{link.label}</Link>
           </li>
         ))}
         <li>
-          <Button>{user ? 'Logout' : 'Login'}</Button>
+          <Button onClick={handleLoginLogout}>{user ? 'Logout' : 'Login'}</Button>
         </li>
       </ul>
       <div className="burger">
@@ -41,9 +52,9 @@ const Navbar = ({ links, user }) => {
 
 Navbar.defaultProps = {
   links: [
-    { label: 'Home', link: '#' },
-    { label: 'Courses', link: '#' },
-    { label: 'Contact Us', link: '#' },
+    { label: 'Home', link: '' },
+    { label: 'Courses', link: 'member-dashboard' },
+    { label: 'Contact Us', link: '' },
   ],
 }
 

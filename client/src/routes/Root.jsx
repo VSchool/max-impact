@@ -5,19 +5,19 @@ import '../styles/global.css'
 import Navbar from '../components/Navbar'
 
 const landingLinks = [
-    { label: 'Home', link: '#' },
-    { label: 'Courses', link: '#' },
-    { label: 'Contact Us', link: '#' },
+    { label: 'Home', url: '/' },
+    { label: 'Courses', url: '/dashboard/lessons' },
+    { label: 'Contact Us', url: '/' },
   ]
 const dashboardLinks = [
-    { label: 'Dashboard', link: '#' },
-    { label: 'Courses', link: '#' },
-    { label: 'Contact Us', link: '#' },
+    { label: 'Dashboard', url: '/dashboard' },
+    { label: 'Courses', url: '/dashboard/lessons' },
+    { label: 'Contact Us', url: '/' },
   ]
 const adminLinks = [
-    { label: 'Admin', link: '#' },
-    { label: 'Courses', link: '#' },
-    { label: 'Contact Us', link: '#' },
+    { label: 'Admin', url: '/admin' },
+    { label: 'Courses', url: '/admin/lessons' },
+    { label: 'Archive', url: '/admin/archive' },
   ]
 
 export const Root = ({ admin }) => {
