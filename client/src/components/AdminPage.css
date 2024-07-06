@@ -1,3 +1,4 @@
+
 .admin-page {
     display: flex;
     flex-direction: column;
@@ -5,7 +6,7 @@
 
     border-radius: 16px 16px 0 0;
     padding: 10px 20px 20px 80px;
-    margin-left: 220px; 
+    margin-left: 240px; 
     min-height: 100vh;
 }
 
@@ -117,6 +118,56 @@
     justify-content: flex-start;
 }
 
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .admin-page-wrapper {
+      margin-left: 0;
+    }
+  
+    .admin-page {
+      padding: 10px;
+      margin-left: 0;
+    }
 
+  
+    .upload-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .class-name-input {
+      width: 80%;
+    }
+  
+    .publish-button {
+      width: 90%;
+    }
+  
+    .lessons-container {
+      justify-content: center;
+    }
+  }
+  * {
+    box-sizing:unset;
+    margin: 0;
+    padding: 0;
+}
 
-
+.uploaded-courses-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 600px) {
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        cursor: pointer;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #000;
+    }
+}
