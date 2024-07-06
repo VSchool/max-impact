@@ -1,5 +1,6 @@
+
 // LessonsDisplayArea.js
-import React from 'react';
+import React, { useState } from 'react';
 import Lesson from './Lessons';
 import './LessonsDisplayArea.css';
 import Sidebar from './Sidebar';
@@ -17,12 +18,21 @@ const lessons = [
       attachment: "Download Attachment",
       imgSrc: "/src/assets/icons/video_card.svg",
     },
-  ];
-  
-  const LessonsDisplayArea = () => {
+];
+
+const LessonsDisplayArea = () => {
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
+    };
+
     return (
       <div className="lessons-display-area">
-        <Sidebar />
+        <button className="hamburger" onClick={toggleSidebar}>
+          ☰
+        </button>
+        <Sidebar isOpen={isSidebarOpen} />
         <section className="user-greeting-section">
           <h1 className="dashboard-title">Hello, [User Name]</h1>
         </section>
@@ -44,5 +54,15 @@ const lessons = [
         </section>
       </div>
     );
-  };
+};
+
 export default LessonsDisplayArea;
+
+
+
+
+
+
+
+
+

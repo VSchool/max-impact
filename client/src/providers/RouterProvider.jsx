@@ -14,6 +14,8 @@ import LessonsDisplayArea from "../components/LessonsDisplayArea";
 import Registration from "../components/Registration";
 import AdminPage from "../components/AdminPage";
 import ArchiveUser from "../components/ArchiveUser";
+import VideoPopUp from "../components/VideoPopUp";
+import CourseEditPopup from "../components/CourseEditPopUp";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,45 @@ const router = createBrowserRouter([
         element: <Archive />
       }
     ],
+// <<<<<<< routing
+// =======
+//   },
+//   {
+//     path: '/login',  
+//     element: <Login />
+//   },
+//   {
+//     path: '/registration',
+//     element: <Registration />
+//   },
+//   {
+//     path: '/signup',  
+//     element: <SignUp />
+//   },
+//   {
+//     path: '/lessons',  
+//     element: <LessonsDisplayArea />
+//   },
+//   {
+//     path: '/Alessons',  
+//     element: <AdminPage />
+//   },
+//   {
+//     path: '/archive',  
+//     element: <Archive />
+//   },
+//   {
+//     path: '/archiveuser',  
+//     element: <ArchiveUser />
+//   },
+//   {
+//     path: '/video',  
+//     element: <VideoPopUp />
+//   },
+//   {
+//     path: '/edit',  
+//     element: <CourseEditPopup />
+// >>>>>>> main
   }
 ]);
 
