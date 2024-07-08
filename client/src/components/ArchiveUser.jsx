@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import './achieve.css'; 
 import Lesson from './Lessons';
-
+import { useAdmin } from '../providers/AdminProvider';
 
 const ArchiveUser = () => {
 
@@ -11,7 +11,7 @@ const ArchiveUser = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
-  const isAdmin = false
+  const isAdmin = useAdmin()
 
 
     const lessons = [
