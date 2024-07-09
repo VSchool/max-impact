@@ -25,29 +25,89 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     children: [
-      { index: true, element: <Landing /> },
-      { path: 'member-dashboard', element: <MemberDashboard /> },
-      { path: 'lessons', element: <LessonsDisplayArea /> },
-      { path: 'archive', element: <Archive /> },
-      { path: 'archiveuser', element: <ArchiveUser /> },
-      { path: 'video', element: <VideoPopUp /> },
-      { path: 'edit', element: <CourseEditPopup /> },
-    ],
+      {
+        index: true,
+        element: <Landing />  
+      }
+    ]
   },
   {
-    path: '/admin',
+    path: 'dashboard',
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <MemberDashboard />
+      },
+      {
+        path: 'lessons',
+        element: <LessonsDisplayArea />
+      },
+      {
+        path: 'archive',
+        element: <Archive />
+      }
+    ]
+  },
+  {
+    path: 'admin',
     element: <Root admin />,
     children: [
-      { index: true, element: <AdminDashboard /> },
-      { path: 'Alessons', element: <AdminPage /> },
+      {
+        index: true,
+        element: <AdminDashboard />,
+      },
+      {
+        path: 'lessons',
+        element: <AdminPage />
+      },
+      {
+        path: 'archive',
+        element: <Archive />
+      }
     ],
-  },
-  { path: '/login', element: <Login /> },
-  { path: '/registration', element: <Registration /> },
-  { path: '/signup', element: <SignUp /> },
+// <<<<<<< routing
+// =======
+//   },
+//   {
+//     path: '/login',  
+//     element: <Login />
+//   },
+//   {
+//     path: '/registration',
+//     element: <Registration />
+//   },
+//   {
+//     path: '/signup',  
+//     element: <SignUp />
+//   },
+//   {
+//     path: '/lessons',  
+//     element: <LessonsDisplayArea />
+//   },
+//   {
+//     path: '/Alessons',  
+//     element: <AdminPage />
+//   },
+//   {
+//     path: '/archive',  
+//     element: <Archive />
+//   },
+//   {
+//     path: '/archiveuser',  
+//     element: <ArchiveUser />
+//   },
+//   {
+//     path: '/video',  
+//     element: <VideoPopUp />
+//   },
+//   {
+//     path: '/edit',  
+//     element: <CourseEditPopup />
+// >>>>>>> main
+  }
 ]);
 
-// Wrap the RouterProvider with authentication
 export const RouteProvider = withAuthenticationRequired(() => {
   return <ReactRouterProvider router={router} />
 });
