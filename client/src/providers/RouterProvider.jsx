@@ -44,8 +44,12 @@ const router = createBrowserRouter([
         element: <LessonsDisplayArea />
       },
       {
-        path: 'archive',
-        element: <Archive />
+        path: 'archive',  
+        element: <ArchiveUser />
+      },
+      {
+        path: 'video',  
+        element: <VideoPopUp />
       }
     ]
   },
@@ -64,6 +68,14 @@ const router = createBrowserRouter([
       {
         path: 'archive',
         element: <Archive />
+      },
+      {
+        path: 'video',  
+        element: <VideoPopUp />
+      },
+      {
+        path: 'edit',  
+        element: <CourseEditPopup />
       }
     ],
 // <<<<<<< routing

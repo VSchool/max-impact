@@ -6,11 +6,6 @@ import { useAdmin } from '../providers/AdminProvider';
 
 const ArchiveUser = () => {
 
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
   const isAdmin = useAdmin()
 
 
@@ -31,10 +26,7 @@ const ArchiveUser = () => {
 
   return (
     <div className="achieve-page">
-        <button className="hamburger" onClick={toggleSidebar}>
-        ☰
-      </button>
-      <Sidebar isAdmin={isAdmin} isOpen={isSidebarOpen} />
+      <Sidebar isAdmin={isAdmin} />
       <section className="achieve-greeting-section">
         <h1 className="achieve-dashboard-title">Archive</h1>
       </section>

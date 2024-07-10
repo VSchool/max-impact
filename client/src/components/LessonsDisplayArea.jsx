@@ -21,18 +21,11 @@ const lessons = [
 ];
 
 const LessonsDisplayArea = () => {
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-    };
 
     return (
       <div className="lessons-display-area">
-        <button className="hamburger" onClick={toggleSidebar}>
-          ☰
-        </button>
-        <Sidebar isOpen={isSidebarOpen} />
+
+        <Sidebar />
         <section className="user-greeting-section">
           <h1 className="dashboard-title">Hello, [User Name]</h1>
         </section>

@@ -19,9 +19,10 @@ const dashboardLinks = {
     { label: 'Contact Us', url: '/' },
   ],
   sidebar: [
-    {
-      label: "Archive", url: '/dashboard/archive'
-    }
+    {label: "Search", url: '/'},
+    {label: "Archive", url: '/dashboard/archive'},
+    {label: "Payment Method", url: '/'},
+    {label: "Manage Account", url: '/'}
   ]
 }
 const adminLinks = {
@@ -31,9 +32,12 @@ const adminLinks = {
     { label: 'Contact us', url: '/' },
   ],
   sidebar: [
-    {
-      label: 'Archive', url: '/admin/archive'
-    }
+    
+    {label: "Search", url: '/'},
+    {label: "Uploaded Courses", url: '/admin/lessons'},
+    {label: "Stats", url: '/'},
+    {label: "Archive", url: '/dashboard/archive'},
+    
   ]
 }
 
