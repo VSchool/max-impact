@@ -24,18 +24,9 @@ const lessons = [
 const isAdmin  = true
 
 const AdminPage = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-      setSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <div className="admin-page-wrapper">
-        <button className="hamburger" onClick={toggleSidebar}>
-          ☰
-        </button>
-       <Sidebar isAdmin={isAdmin} isOpen={isSidebarOpen} />
+       <Sidebar isAdmin={isAdmin} />
       <div className="admin-page">
         <section className="admin-greeting-section">
           <h1 className="admin-dashboard-title">Hello, Admin</h1>

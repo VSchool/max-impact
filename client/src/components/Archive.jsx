@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar'; 
 import './achieve.css'; 
 import Lesson from './Lessons';
+import { useAdmin } from '../providers/AdminProvider';
+
+
 
 const Archive = () => {
-
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
-const isAdmin  = true
+  const isAdmin = useAdmin()
 
     const lessons = [
         {
@@ -29,10 +26,7 @@ const isAdmin  = true
 
   return (
     <div className="achieve-page">
-      <button className="hamburger" onClick={toggleSidebar}>
-        ☰
-      </button>
-      <Sidebar isAdmin={isAdmin} isOpen={isSidebarOpen} />
+      <Sidebar isAdmin={isAdmin} />
        <div className='test'>
       <section className="achieve-greeting-section">
         <h1 className="achieve-dashboard-title">Archive</h1>
