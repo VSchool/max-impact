@@ -44,9 +44,9 @@ const adminLinks = {
 export const Root = ({ admin }) => {
   const { user } = useAuth0()
   const navigate = useNavigate()
-  const isAdmin = user?.admin
+  const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
   useEffect(() => {
-    if (admin !== user.admin) navigate(user.admin ? '/admin' : '/')
+    if (admin !== metadata.admin) navigate(user.admin ? '/admin' : '/')
   }, [admin, user, navigate])
 
   return (
