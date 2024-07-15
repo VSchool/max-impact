@@ -60,6 +60,23 @@ Under User Management --> Users, create two users and assign one of them the mem
     "admin": true
 }
 ```
+##### Create Auth0 Action for Admin Metadata:
+Under Auth0 --> Actions --> Library, go to Custom, and select "Create Action".  In the code editor paste the following code:
+
+```
+exports.onExecutePostLogin = async (event, api) => {
+
+  // Check if the user has roles defined in the app metadata
+  if (event.user && event.user.user_metadata) {
+    api.idToken.setCustomClaim(`http://localhost:5173/user_metadata`, event.user.user_metadata);
+  }
+};
+```
+In the above example the http://localhost:5173 portion of the template literal is your namespace.  This will need to be adjusted in a production environment.
+
+Save the draft, and click deploy.
+
+Go to Actions --> Flows, and select Login.  In the "Add Action" panel, select "Custom", and drag over the new action you just created, in between Start and Complete.
 
 ##### Enforce permissions on server requests
 To authorize requests to your server, you can use the `allow()` middleware function which will prevent users without the specified permissions to access the endpoint.
