@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />  
+      },
+      {
+        path: 'contact',
+        element: <ContactUs />
       }
     ]
   },
@@ -81,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: 'edit',  
         element: <CourseEditPopup />
+      },
+      {
+        path: 'contact',
+        element: <ContactUs />
       }
     ],
 // <<<<<<< routing
