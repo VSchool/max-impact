@@ -1,0 +1,203 @@
+/* Regular CSS for desktop view */
+.contact-us-container {
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    background-color: #61537B;
+    border-radius: 4px;
+    width: 691px;
+  }
+
+  .top-contact-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-us-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px 20px 40px;
+    border-bottom: 1px solid #FFFFFF;
+  }
+
+  .back-button, .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    filter: invert(1)
+  }
+
+  .contact-us-content {
+    width: 100%;
+    padding: 40px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-us-content h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #ffffff;
+  }
+
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 320px;
+  }
+
+  .form-group {
+    position: relative;
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: #61537B;
+    border: 1px solid #bebaba;
+   
+  }
+
+  .form-group textarea {
+    height: 248px;
+    resize: none;
+  }
+
+  .form-group .form-label {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+
+  .form-group input:focus + .form-label,
+  .form-group input:valid + .form-label,
+  .form-group textarea:focus + .form-label,
+  .form-group textarea:valid + .form-label {
+    top: -8px;
+    left: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  .submit-button {
+    padding: 16px;
+    width: 80%;
+    height: 54px;
+    background: #DC9E47;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+  }
+  * {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+  }
+  
+
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #ffffff; 
+      opacity: 0.5; 
+    }
+    .close-button, .back-button{
+        border: none;
+        cursor: pointer;
+        filter: invert(1)
+      } 
+    .contact-us-container {
+      justify-content: flex-start;
+      margin-top: 50px;
+      padding: 20px 8px;
+      width: 90%;
+      background: #61537B;
+      border-radius: 4px;
+      height: 700px;
+    }
+
+    .contact-us-header {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      
+    }
+
+    .contact-us-content {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-us-content h1 {
+      font-size: 34px;
+      line-height: 32px;
+      color: #FFFFFF;
+      padding-top: 20px;
+    }
+
+    .contact-us-form {
+      width: 90%;
+      gap: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px;
+      font-size: 14px;
+      width: 100%;
+      background-color: #61537B;
+      border: 1px solid #ffffff;
+      color: #ffffff; /* Text color */
+    }
+
+    .form-group .form-label {
+      font-size: 14px;
+      color: #ffffff; /* Label color */
+    }
+
+    .submit-button {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    * {
+        box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+      }
+      
+      /* Add your existing component-specific styles here */
+  }

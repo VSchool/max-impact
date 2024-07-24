@@ -8,7 +8,7 @@ const landingLinks = {
   main: [
     { label: 'Home', url: '/' },
     { label: 'Courses', url: '/dashboard/lessons' },
-    { label: 'Contact Us', url: '/' },
+    { label: 'Contact Us', url: '/contact' },
   ],
   sidebar: []
 }
@@ -16,7 +16,7 @@ const dashboardLinks = {
   main: [
     { label: 'Home', url: '/' },
     { label: 'Courses', url: '/dashboard/lessons' },
-    { label: 'Contact Us', url: '/' },
+    { label: 'Contact Us', url: '/contact' },
   ],
   sidebar: [
     {label: "Search", url: '/'},
@@ -27,9 +27,9 @@ const dashboardLinks = {
 }
 const adminLinks = {
   main: [
-    { label: 'Home', url: '/' },
+    { label: 'Home', url: '/admin' },
     { label: 'Courses', url: '/admin/lessons' },
-    { label: 'Contact us', url: '/' },
+    { label: 'Contact us', url: '/admin/contact' },
   ],
   sidebar: [
     
@@ -51,7 +51,7 @@ export const Root = ({ admin }) => {
 
   return (
     <>
-      <Navbar user={user} links={user && user.admin ? adminLinks : user ? dashboardLinks : landingLinks} />
+      <Navbar user={user} links={user && metadata.admin ? adminLinks : user ? dashboardLinks : landingLinks} />
       <Outlet />
     </>
   )

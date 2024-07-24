@@ -18,6 +18,7 @@ import AdminPage from "../components/AdminPage";
 import ArchiveUser from "../components/ArchiveUser";
 import VideoPopUp from "../components/VideoPopUp";
 import CourseEditPopup from "../components/CourseEditPopUp";
+import ContactUs from "../components/ContactUs";
 
 // Create the router with routes for different components
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />  
+      },
+      {
+        path: 'contact',
+        element: <ContactUs />
       }
     ]
   },
@@ -50,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: 'video',  
         element: <VideoPopUp />
+      },
+      {
+        path: 'contact',  
+        element: <ContactUs />
       }
     ]
   },
@@ -76,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: 'edit',  
         element: <CourseEditPopup />
+      },
+      {
+        path: 'contact',
+        element: <ContactUs />
       }
     ],
 // <<<<<<< routing
