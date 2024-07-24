@@ -5,14 +5,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 8px;
     gap: 8px;
     position: absolute;
-    width: 954px;
-    height: 827px;
+    width: 60%;
+    height: 100%;
     left: 390px;
-    top: 40px;
-    background: #FFFFFF;
+    background-color: #61537B;
     border-radius: 4px;
   }
 
@@ -20,7 +18,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 40px;
+    padding: 10px 20px 20px 40px;
+    border-bottom: 1px solid #FFFFFF;
   }
 
   .back-button, .close-button {
@@ -28,6 +27,7 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
+    filter: invert(1)
   }
 
   .contact-us-content {
@@ -43,7 +43,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 40px;
-    color: #000000;
+    color: #ffffff;
   }
 
   .contact-us-form {
@@ -63,12 +63,13 @@
   .form-group textarea {
     width: 100%;
     padding: 12px 24px;
-    border: 1px solid #000000;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 22px;
-    color: #000000;
+    background-color: #61537B;
+    border: 1px solid #bebaba;
+   
   }
 
   .form-group textarea {
@@ -82,7 +83,7 @@
     left: 24px;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    color: #000000;
+    color: #ffffff;
     pointer-events: none;
     transition: 0.2s;
   }
@@ -100,7 +101,7 @@
 
   .submit-button {
     padding: 16px;
-    width: 186px;
+    width: 80%;
     height: 54px;
     background: #DC9E47;
     border: none;
@@ -111,6 +112,10 @@
     color: #000000;
     cursor: pointer;
   }
+  * {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+  }
+  
 
   /* Media query for mobile devices */
   @media (max-width: 768px) {
@@ -142,6 +147,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 16px;
+      
     }
 
     .contact-us-content {
@@ -157,11 +163,12 @@
       font-size: 34px;
       line-height: 32px;
       color: #FFFFFF;
+      padding-top: 20px;
     }
 
     .contact-us-form {
       width: 90%;
-      gap: 30px;
+      gap: 20px;
     }
 
     .form-group input,
@@ -185,6 +192,8 @@
     }
 
     * {
-      box-sizing: border-box;
-    }
+        box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+      }
+      
+      /* Add your existing component-specific styles here */
   }
