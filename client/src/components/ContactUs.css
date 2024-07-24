@@ -6,12 +6,17 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    left: 390px;
+    position: relative;
     background-color: #61537B;
     border-radius: 4px;
+    width: 691px;
+  }
+
+  .top-contact-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .contact-us-header {
@@ -135,7 +140,6 @@
       margin-top: 50px;
       padding: 20px 8px;
       width: 90%;
-      left: 4%;
       background: #61537B;
       border-radius: 4px;
       height: 700px;

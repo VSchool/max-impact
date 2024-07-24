@@ -14,7 +14,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-us-container">
+    <div className='top-contact-us-container'>
+      <div className="contact-us-container">
       <div className="contact-us-header">
         <button className="back-button">
         <img src="/src/assets/icons/back.svg" alt="Back" />
@@ -64,6 +65,7 @@ const ContactUs = () => {
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
