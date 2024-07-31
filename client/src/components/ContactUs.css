@@ -74,6 +74,7 @@
     line-height: 22px;
     background-color: #61537B;
     border: 1px solid #bebaba;
+    color: #FFFFFF;
    
   }
 
@@ -97,7 +98,7 @@
   .form-group input:valid + .form-label,
   .form-group textarea:focus + .form-label,
   .form-group textarea:valid + .form-label {
-    top: -8px;
+    top: -1px;
     left: 18px;
     font-size: 12px;
     font-weight: 700;
@@ -118,7 +119,7 @@
     cursor: pointer;
   }
   * {
-    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+    box-sizing: border-box; 
   }
   
 
@@ -182,12 +183,12 @@
       width: 100%;
       background-color: #61537B;
       border: 1px solid #ffffff;
-      color: #ffffff; /* Text color */
+      color: #ffffff; 
     }
 
     .form-group .form-label {
       font-size: 14px;
-      color: #ffffff; /* Label color */
+      color: #ffffff; 
     }
 
     .submit-button {
@@ -196,8 +197,6 @@
     }
 
     * {
-        box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
-      }
-      
-      /* Add your existing component-specific styles here */
+        box-sizing: border-box; 
+     
   }
