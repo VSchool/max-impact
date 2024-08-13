@@ -19,6 +19,7 @@ import ArchiveUser from "../components/ArchiveUser";
 import VideoPopUp from "../components/VideoPopUp";
 import CourseEditPopup from "../components/CourseEditPopUp";
 import ContactUs from "../components/ContactUs";
+import Subscription from "../components/Subscription";
 
 // Create the router with routes for different components
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <ContactUs />
+      },
+      {
+        path: 'subscribe',
+        element: <Subscription />
       }
     ]
   },
@@ -64,11 +69,11 @@ const router = createBrowserRouter([
   },
   {
     path: 'admin',
-    element: <Root admin />,
+    element: <AdminDashboard admin />,
     children: [
       {
         index: true,
-        element: <AdminDashboard />,
+        element: <AdminPage />,
       },
       {
         path: 'lessons',

@@ -29,7 +29,7 @@ const adminLinks = {
   main: [
     { label: 'Home', url: '/admin' },
     { label: 'Courses', url: '/admin/lessons' },
-    { label: 'Contact us', url: '/admin/contact' },
+    { label: 'Contact us', url: '/contact' },
   ],
   sidebar: [
     
@@ -43,11 +43,7 @@ const adminLinks = {
 
 export const Root = ({ admin }) => {
   const { user } = useAuth0()
-  const navigate = useNavigate()
   const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
-  useEffect(() => {
-    if (admin !== metadata.admin) navigate(user.admin ? '/admin' : '/')
-  }, [admin, user, navigate])
 
   return (
     <>
