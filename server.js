@@ -1,6 +1,7 @@
 const ex = require('express');
 const { fileMetadataRouter } = require('./routes/file-metadata');
 const { validateAuthToken, handleError, enableCors, allowOperation } = require('./middleware');
+const { stripeRouter } = require('./routes/stripeRouter');
 
 
 const server = ex();
@@ -13,6 +14,7 @@ server.use(ex.json());
 server.use(ex.urlencoded({ extended: true }));
 server.use(enableCors)
 server.use('/api/file-metadata', validateAuthToken, fileMetadataRouter)
+server.use('/stripe', stripeRouter)
 
 server.get('/authorized-to-read', validateAuthToken, allowOperation(['read:files']), (req, res) => {
     res.status(200).send('Resources sent!')});
