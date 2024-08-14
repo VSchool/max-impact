@@ -20,6 +20,7 @@ import VideoPopUp from "../components/VideoPopUp";
 import CourseEditPopup from "../components/CourseEditPopUp";
 import ContactUs from "../components/ContactUs";
 import Subscription from "../components/Subscription";
+import PaymentLanding from "../components/PaymentLanding";
 
 // Create the router with routes for different components
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'subscribe',
         element: <Subscription />
+      },
+      {
+        path: 'payment-confirmation',
+        element: <PaymentLanding />
       }
     ]
   },

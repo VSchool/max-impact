@@ -109,3 +109,13 @@ cd client && npm run dev
 ```
 
 ### Troubleshooting
+
+### Stripe Payment
+Make sure to add the following values to the .env file to make sure we have callback URIs for the Stripe API
+```
+STRIPE_SUCCESS_URI='http://localhost:5173/payment-confirmation?status=success'
+STRIPE_FAILURE_URI='http://localhost:5173/payment-confirmation?status=failure'
+```
+
+#### General Stripe Payment Flow:
+The user goes to the subscription page which details the subscription and offers a checkout button.  The checkout button directs the user to the stripe/create-checkout-session route which will then use the stripe api to redirect the user to Stripe's secure checkout form.  Once complete the user will be redirected back to the app.

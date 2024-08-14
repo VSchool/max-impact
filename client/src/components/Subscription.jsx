@@ -1,13 +1,7 @@
-import { useNavigate } from "react-router-dom"
-
 export default function Subscription() {
-    const navigate = useNavigate()
-    const handleClick = () => {
-        navigate('/stripe/create-checkout-session')
-    }
     return (
-        <button onClick={handleClick}>
-            CLICK THIS BUTTON FOR SUBSCRIPTION
-        </button>
+        <form action="/stripe/create-checkout-session" method="POST">
+            <button type="submit">Checkout</button>
+        </form>
     )
 }
