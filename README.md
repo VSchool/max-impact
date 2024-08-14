@@ -140,6 +140,7 @@ Make sure to add the following values to the .env file to make sure we have call
 STRIPE_SUCCESS_URI='http://localhost:5173/payment-confirmation?status=success'
 STRIPE_FAILURE_URI='http://localhost:5173/payment-confirmation?status=failure'
 STRIPE_USER_PORTAL_CALLBACK_URI='http://localhost:5173'
+STRIPE_WEBHOOK_SIGNING_SECRET="whsec_3173545b4022a9b6cd6559d640bd3c48fca49b294ebc8c155d9d02692d215b8a"
 ```
 
 #### General Stripe Payment Flow:
