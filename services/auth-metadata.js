@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const axios = require('axios')
 
 // url is hard coded (add to env variable)

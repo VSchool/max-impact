@@ -9,8 +9,8 @@ const upload = multer({
 
 const validateAuthToken = auth({
     audience: process.env.AUTH0_AUDIENCE,
-    issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
-    tokenSigningAlg: 'RS256',
+    issuerBaseURL: process.env.AUTH0_DOMAIN,
+    tokenSigningAlg: 'RS256'
 });
 
 const enableCors = cors({ origin: [...process.env.CORS_WHITELIST.split(','), process.env.AUTH0_ISSUER_BASE_URL] })

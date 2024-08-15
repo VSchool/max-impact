@@ -2,13 +2,13 @@ const express = require('express')
 const stripe = require('stripe')(
   'sk_test_51MmO6CHanGj2ccfvz0s8zpIlf926yRWnavZF5dgeev2WWW126yIVbigLWRQzj0A6iBXVrQVKgrrbKKHl3QK5D63p00bx81kVju'
 )
-const updateUserMetadata = require('../services/auth-metadata')
+const { updateUserMetadata } = require('../services/auth-metadata.js')
 
 const stripeRouter = express.Router()
 
-// callback
+// callback (we need to create metadata not update)
 stripeRouter.get('/confirm', async (req, res, next) => {
-  const { userId, status } = req.params
+  const { userId, status } = req.query
   //   redirect if failure
   if (status === 'failure') {
     res.redirect(process.env.STRIPE_FAILURE_REDIRECT)
@@ -17,9 +17,15 @@ stripeRouter.get('/confirm', async (req, res, next) => {
     //   find subscriptionId
     //   find customerId
     //   add metadata for userId to auth0
-    const updateRes = await updateUserMetadata(userId, { admin2: 'hello' })
+    try {
+      const updateRes = await updateUserMetadata(userId, { admin: 'hello' })
+      console.log(updateRes)
+      res.redirect(process.env.STRIPE_SUCCESS_REDIRECT)
+    } catch (e) {
+      console.log(e)
+      res.redirect(process.env.STRIPE_FAILURE_REDIRECT)
+    }
     //   redirect back to app
-    res.redirect(process.env.STRIPE_SUCCESS_REDIRECT)
   }
 })
 
