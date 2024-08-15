@@ -18,6 +18,7 @@ server.use(enableCors)
 // routers
 server.use('/api/file-metadata', validateAuthToken, ex.json(), fileMetadataRouter)
 server.use('/stripe', stripeRouter)
+
 server.get('/authorized-to-read', validateAuthToken, allowOperation(['read:files']), (req, res) => {
     res.status(200).send('Resources sent!')});
 server.use(handleError);

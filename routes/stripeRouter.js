@@ -2,10 +2,30 @@ const express = require('express')
 const stripe = require('stripe')(
   'sk_test_51MmO6CHanGj2ccfvz0s8zpIlf926yRWnavZF5dgeev2WWW126yIVbigLWRQzj0A6iBXVrQVKgrrbKKHl3QK5D63p00bx81kVju'
 )
+const updateUserMetadata = require('../services/auth-metadata')
 
 const stripeRouter = express.Router()
 
+// callback
+stripeRouter.get('/confirm', async (req, res, next) => {
+  const { userId, status } = req.params
+  //   redirect if failure
+  if (status === 'failure') {
+    res.redirect(process.env.STRIPE_FAILURE_REDIRECT)
+  } else {
+    //   otherwise success
+    //   find subscriptionId
+    //   find customerId
+    //   add metadata for userId to auth0
+    const updateRes = await updateUserMetadata(userId, { admin2: 'hello' })
+    //   redirect back to app
+    res.redirect(process.env.STRIPE_SUCCESS_REDIRECT)
+  }
+})
+
 stripeRouter.post('/create-checkout-session', async (req, res, next) => {
+  const userId = req.body.customer
+  //   price is hard coded as we only have one price (this could be an input if needed)
   const subscriptionPriceLookupKey = 'price_1PnTNwHanGj2ccfvEq265lXz'
 
   const session = await stripe.checkout.sessions.create({
@@ -17,8 +37,8 @@ stripeRouter.post('/create-checkout-session', async (req, res, next) => {
       },
     ],
     mode: 'subscription',
-    success_url: process.env.STRIPE_SUCCESS_URI,
-    cancel_url: process.env.STRIPE_FAILURE_URI,
+    success_url: `${process.env.STRIPE_SUCCESS_URI}&userId=${userId}`,
+    cancel_url: `${process.env.STRIPE_FAILURE_URI}&userId=${userId}`,
   })
 
   res.redirect(303, session.url)
