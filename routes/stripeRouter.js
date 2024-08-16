@@ -8,18 +8,27 @@ const stripeRouter = express.Router()
 
 // callback (we need to create metadata not update)
 stripeRouter.get('/confirm', async (req, res, next) => {
-  const { userId, status } = req.query
+  const { userId, status, session_id } = req.query
   //   redirect if failure
   if (status === 'failure') {
     res.redirect(process.env.STRIPE_FAILURE_REDIRECT)
   } else {
     //   otherwise success
     //   find subscriptionId
-    //   find customerId
+    const session = await stripe.checkout.sessions.retrieve(session_id)
+    const subscriptionId = session.subscription
+    const customerId = session.customer
+
+    const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+    const subscriptionStatus = subscription.status
+
     //   add metadata for userId to auth0
     try {
-      const updateRes = await updateUserMetadata(userId, { admin: 'hello' })
-      console.log(updateRes)
+      const updateRes = await updateUserMetadata(userId, {
+        subscriptionStatus,
+        subscriptionId,
+        customerId,
+      })
       res.redirect(process.env.STRIPE_SUCCESS_REDIRECT)
     } catch (e) {
       console.log(e)
@@ -43,7 +52,8 @@ stripeRouter.post('/create-checkout-session', async (req, res, next) => {
       },
     ],
     mode: 'subscription',
-    success_url: `${process.env.STRIPE_SUCCESS_URI}&userId=${userId}`,
+    // sucess_url provides auth0 userId & stripe session.id
+    success_url: `${process.env.STRIPE_SUCCESS_URI}&userId=${userId}&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.STRIPE_FAILURE_URI}&userId=${userId}`,
   })
 
