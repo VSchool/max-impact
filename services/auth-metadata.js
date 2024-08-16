@@ -50,8 +50,32 @@ const updateUserMetadata = async (userId, app_metadata) => {
   }
 }
 
-const userId = 'auth0|663c2715a2d3c01179d980ad'
+const queryAuthMetadata = async (key, value) => {
+  // get access token
+  const token = await getAccessToken()
+  // define query with params
+  const query = `app_metadata.${key}:${value}`
+  try {
+    const response = await axios.get(
+      `${process.env.AUTH0_DOMAIN}/api/v2/users`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          q: query,
+          search_engine: 'v3',
+        },
+      }
+    )
+
+    return response.data
+  } catch (e) {
+    return e
+  }
+}
 
 module.exports = {
   updateUserMetadata,
+  queryAuthMetadata,
 }

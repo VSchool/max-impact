@@ -2,7 +2,10 @@ const express = require('express')
 const stripe = require('stripe')(
   'sk_test_51MmO6CHanGj2ccfvz0s8zpIlf926yRWnavZF5dgeev2WWW126yIVbigLWRQzj0A6iBXVrQVKgrrbKKHl3QK5D63p00bx81kVju'
 )
-const { updateUserMetadata } = require('../services/auth-metadata.js')
+const {
+  updateUserMetadata,
+  queryAuthMetadata,
+} = require('../services/auth-metadata.js')
 
 const stripeRouter = express.Router()
 
@@ -62,29 +65,24 @@ stripeRouter.post('/create-checkout-session', async (req, res, next) => {
 
 // store customerID in auth0 which will be utilized on this route
 stripeRouter.post('/create-portal-session', async (req, res) => {
-  // we need customerID which should be stored in auth0
-  const { customer } = req.body
-
-  console.log(customer)
-
-  // This is the url to which the customer will be redirected when they are done
-  // managing their billing with the portal.
-  //   const returnUrl = process.env.STRIPE_USER_PORTAL_CALLBACK_URI
-
-  //   const portalSession = await stripe.billingPortal.sessions.create({
-  //     customer: customer,
-  //     return_url: returnUrl,
-  //   })
-
-  //   res.redirect(303, portalSession.url)
-  res.send('SUCCESS')
+  // customerId comes from the form which comes from auth0
+  const { customerId } = req.body
+  // callback uri
+  const returnUrl = process.env.STRIPE_USER_PORTAL_CALLBACK_URI
+  // create portal session with stripe
+  const portalSession = await stripe.billingPortal.sessions.create({
+    customer: customerId,
+    return_url: returnUrl,
+  })
+  // redirect to portal
+  res.redirect(303, portalSession.url)
 })
 
 // webhook for subscription events
 stripeRouter.post(
   '/webhook',
   express.raw({ type: 'application/json' }),
-  (request, response) => {
+  async (request, response) => {
     let event = request.body
     // Replace this endpoint secret with your endpoint's unique secret
     // If you are testing with the CLI, find the secret by running 'stripe listen'
@@ -122,11 +120,18 @@ stripeRouter.post(
         subscription = event.data.object
         status = subscription.status
         console.log(`Subscription status is ${status}.`)
-        console.log(subscription.id)
-        console.log(subscription.customer)
-        console.log(subscription.status)
         // Then define and call a method to handle the subscription deleted.
-        // handleSubscriptionDeleted(subscriptionDeleted);
+        // query auth0 for a user with matching app_metadata:
+        let res = await queryAuthMetadata('subscriptionId', subscription.id)
+
+        if (res.length > 0) {
+          console.log(
+            `updating user ${res[0].user_id} subscription status to ${subscription.status}`
+          )
+          let updateRes = await updateUserMetadata(res[0].user_id, {
+            subscriptionStatus: subscription.status,
+          })
+        }
         break
       case 'customer.subscription.created':
         subscription = event.data.object
@@ -139,8 +144,22 @@ stripeRouter.post(
         subscription = event.data.object
         status = subscription.status
         console.log(`Subscription status is ${status}.`)
-        // Then define and call a method to handle the subscription update.
-        // handleSubscriptionUpdated(subscription);
+        let updatedSubRes = await queryAuthMetadata(
+          'subscriptionId',
+          subscription.id
+        )
+
+        if (updatedSubRes.length > 0) {
+          console.log(
+            `updating user ${updatedSubRes[0].user_id} subscription status to ${subscription.status}`
+          )
+          var updatedSubResUpdate = await updateUserMetadata(
+            updatedSubRes[0].user_id,
+            {
+              subscriptionStatus: subscription.status,
+            }
+          )
+        }
         break
       case 'entitlements.active_entitlement_summary.updated':
         subscription = event.data.object

@@ -78,8 +78,8 @@ Under Auth0 --> Actions --> Library, go to Custom, and select "Create Action". I
 exports.onExecutePostLogin = async (event, api) => {
 
   // Check if the user has roles defined in the app metadata
-  if (event.user && event.user.user_metadata) {
-    api.idToken.setCustomClaim(`http://localhost:5173/user_metadata`, event.user.user_metadata);
+  if (event.user && event.user.app_metadata) {
+    api.idToken.setCustomClaim(`http://localhost:5173/app_metadata`, event.user.app_metadata);
   }
 };
 ```
@@ -132,7 +132,12 @@ cd client && npm run dev
 
 ### Troubleshooting
 
-### Stripe Payment
+<br />
+<br />
+
+---
+
+# Stripe Payment
 
 Make sure to add the following values to the .env file to make sure we have callback URIs for the Stripe API
 
@@ -148,3 +153,6 @@ STRIPE_WEBHOOK_SIGNING_SECRET="whsec_3173545b4022a9b6cd6559d640bd3c48fca49b294eb
 The user goes to the subscription page which details the subscription and offers a checkout button. The checkout button directs the user to the stripe/create-checkout-session route which will then use the stripe api to redirect the user to Stripe's secure checkout form. Once complete the user will be redirected back to the app.
 
 Account management is handled via Stripe's assets, so we have created a route that will redirect the user to stripe, and using our STRIPE_USER_PORTAL_CALLBACK_URI Stripe will redirect the user back to our app when they are done managing subscriptions.
+
+1. Add env variables
+2. Configure Stripe

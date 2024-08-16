@@ -43,7 +43,7 @@ const adminLinks = {
 
 export const Root = ({ admin }) => {
   const { user } = useAuth0()
-  const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
+  const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/app_metadata`]
 
   return (
     <>
