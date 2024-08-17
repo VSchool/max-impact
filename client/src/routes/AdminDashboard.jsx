@@ -49,9 +49,6 @@ export const AdminDashboard = ({admin}) => {
     const { getAllFileMetadata } = useFileMetadataContext();
     const navigate = useNavigate()
     const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
-    useEffect(() => {
-        if (admin !== metadata.admin) navigate(user.admin ? '/admin' : '/')
-    }, [admin, user, navigate])
 
     useEffect(() => {
         getAllFileMetadata()

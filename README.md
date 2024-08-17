@@ -156,3 +156,4 @@ Account management is handled via Stripe's assets, so we have created a route th
 
 1. Add env variables
 2. Configure Stripe
+3. Stripe CLI for testing

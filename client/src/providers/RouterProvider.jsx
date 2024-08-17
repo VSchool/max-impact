@@ -1,240 +1,87 @@
-
 // RouterProvider.jsx
 import {
   createBrowserRouter,
   RouterProvider as ReactRouterProvider,
-} from "react-router-dom";
-import { Root } from "../routes/Root";
-import { withAuthenticationRequired } from "@auth0/auth0-react";
-import { MemberDashboard } from '../routes/MemberDashboard';
-import { AdminDashboard } from '../routes/AdminDashboard'; 
-import Landing from "../components/Landing";
-import Login from "../components/Login";
-import SignUp from "../components/SignUp";
-import Archive from "../components/Archive";
-import LessonsDisplayArea from "../components/LessonsDisplayArea";
-import Registration from "../components/Registration";
-import AdminPage from "../components/AdminPage";
-import ArchiveUser from "../components/ArchiveUser";
-import VideoPopUp from "../components/VideoPopUp";
-import CourseEditPopup from "../components/CourseEditPopUp";
-import ContactUs from "../components/ContactUs";
-import Subscription from "../components/Subscription";
-import PaymentLanding from "../components/PaymentLanding";
+} from 'react-router-dom'
+import { Root } from '../routes/Root'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
+import { MemberDashboard } from '../routes/MemberDashboard'
+import { AdminDashboard } from '../routes/AdminDashboard'
+import Landing from '../components/Landing'
+import Archive from '../components/Archive'
+import LessonsDisplayArea from '../components/LessonsDisplayArea'
+import AdminPage from '../components/AdminPage'
+import ArchiveUser from '../components/ArchiveUser'
+import VideoPopUp from '../components/VideoPopUp'
+import CourseEditPopup from '../components/CourseEditPopUp'
+import ContactUs from '../components/ContactUs'
+import Subscription from '../components/Subscription'
+import PaymentLanding from '../components/PaymentLanding'
+import { AuthenticationGuard } from './AuthenticationGuard'
+import MemberLanding from '../components/MemberLanding'
+import AdminLesson from '../components/AdminLesson'
 
-// Create the router with routes for different components
-const router = createBrowserRouter([
+const publicRouter = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     children: [
       {
         index: true,
-        element: <Landing />  
+        element: <Landing />,
       },
       {
         path: 'contact',
-        element: <ContactUs />
+        element: <ContactUs />,
       },
-      {
-        path: 'subscribe',
-        element: <Subscription />
-      },
-      {
-        path: 'payment-confirmation',
-        element: <PaymentLanding />
-      }
-    ]
+    ],
   },
   {
-    path: 'dashboard',
-    element: <Root />,
+    path: '/dashboard',
+    element: <AuthenticationGuard component={MemberDashboard} />,
     children: [
       {
         index: true,
-        element: <MemberDashboard />
+        element: <MemberLanding />
+      },
+      {
+        path: 'subscribe',
+        element: <Subscription />,
+      },
+      {
+        path: 'payment-confirmation',
+        element: <PaymentLanding />,
+      },
+      {
+        path: 'lessons',
+        element: <LessonsDisplayArea />,
+      },
+      {
+        path: 'archive',
+        element: <ArchiveUser />
+      }
+    ],
+  },
+  {
+    path: '/admin',
+    element: <AuthenticationGuard admin component={AdminDashboard} />,
+    children: [
+      {
+        path: 'archive',
+        element: <Archive />,
       },
       {
         path: 'lessons',
         element: <LessonsDisplayArea />
-      },
-      {
-        path: 'archive',  
-        element: <ArchiveUser />
-      },
-      {
-        path: 'video',  
-        element: <VideoPopUp />
-      },
-      {
-        path: 'contact',  
-        element: <ContactUs />
-      }
-    ]
-  },
-  {
-    path: 'admin',
-    element: <AdminDashboard admin />,
-    children: [
-      {
-        index: true,
-        element: <AdminPage />,
-      },
-      {
-        path: 'lessons',
-        element: <AdminPage />
-      },
-      {
-        path: 'archive',
-        element: <Archive />
-      },
-      {
-        path: 'video',  
-        element: <VideoPopUp />
-      },
-      {
-        path: 'edit',  
-        element: <CourseEditPopup />
-      },
-      {
-        path: 'contact',
-        element: <ContactUs />
       }
     ],
-// <<<<<<< routing
-// =======
-//   },
-//   {
-//     path: '/login',  
-//     element: <Login />
-//   },
-//   {
-//     path: '/registration',
-//     element: <Registration />
-//   },
-//   {
-//     path: '/signup',  
-//     element: <SignUp />
-//   },
-//   {
-//     path: '/lessons',  
-//     element: <LessonsDisplayArea />
-//   },
-//   {
-//     path: '/Alessons',  
-//     element: <AdminPage />
-//   },
-//   {
-//     path: '/archive',  
-//     element: <Archive />
-//   },
-//   {
-//     path: '/archiveuser',  
-//     element: <ArchiveUser />
-//   },
-//   {
-//     path: '/video',  
-//     element: <VideoPopUp />
-//   },
-//   {
-//     path: '/edit',  
-//     element: <CourseEditPopup />
-// >>>>>>> main
-  }
-]);
+  },
+])
 
-export const RouteProvider = withAuthenticationRequired(() => {
-  return <ReactRouterProvider router={router} />
-});
-
-
-
-
-
-
-// import {
-//   createBrowserRouter,
-//   RouterProvider as ReactRouterProvider,
-// } from "react-router-dom";
-// import { Root } from "../routes/Root";
-// import { withAuthenticationRequired } from "@auth0/auth0-react";
-// import { MemberDashboard } from '../routes/MemberDashboard';
-// import { AdminDashboard } from '../routes/AdminDashboard'; 
-// import Landing from "../components/Landing";
-// import Login from "../components/Login";
-// import SignUp from "../components/SignUp";
-// import Archive from "../components/Archive";
-// import LessonsDisplayArea from "../components/LessonsDisplayArea";
-// import Registration from "../components/Registration";
-// import AdminPage from "../components/AdminPage";
-// import ArchiveUser from "../components/ArchiveUser";
-// import VideoPopUp from "../components/VideoPopUp";
-// import CourseEditPopup from "../components/CourseEditPopUp";
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Root />,
-//     children: [
-//       {
-//         index: true,
-//         element: <Landing />  
-//       },
-//       {
-//         path: 'member-dashboard',
-//         element: <MemberDashboard />
-//       }
-//     ]
-//   },
-//   {
-//     path: '/admin',
-//     element: <Root admin />,
-//     children: [
-//       {
-//         index: true,
-//         element: <AdminDashboard />,
-//       },
-//     ],
-//   },
-//   {
-//     path: '/login',  
-//     element: <Login />
-//   },
-//   {
-//     path: '/registration',
-//     element: <Registration />
-//   },
-//   {
-//     path: '/signup',  
-//     element: <SignUp />
-//   },
-//   {
-//     path: '/lessons',  
-//     element: <LessonsDisplayArea />
-//   },
-//   {
-//     path: '/Alessons',  
-//     element: <AdminPage />
-//   },
-//   {
-//     path: '/archive',  
-//     element: <Archive />
-//   },
-//   {
-//     path: '/archiveuser',  
-//     element: <ArchiveUser />
-//   },
-//   {
-//     path: '/video',  
-//     element: <VideoPopUp />
-//   },
-//   {
-//     path: '/edit',  
-//     element: <CourseEditPopup />
-//   }
-  
-// ]);
-
-// export const RouteProvider = withAuthenticationRequired(() => {
-//   return <ReactRouterProvider router={router} />
-// })
+export const RouteProvider = () => {
+  return (
+    <>
+      <ReactRouterProvider router={publicRouter} />
+    </>
+  )
+}
