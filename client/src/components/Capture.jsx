@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
-export default function Subscription() {
+export default function Capture() {
   const { user } = useAuth0()
   const [metadata, setMetadata] = useState({ customerId: '' })
   const [userId, setUserId] = useState('userId')
@@ -15,20 +15,11 @@ export default function Subscription() {
   return (
     <>
       <div>
+        <h3>You need to subscribe</h3>
+        <div>Price is $35 / month</div>
         <form action="/stripe/create-checkout-session" method="POST">
           <input type="hidden" id="customer" name="customer" value={userId} />
-          <button type="submit">Checkout</button>
-        </form>
-      </div>
-      <div>
-        <form action="/stripe/create-portal-session" method="POST">
-          <input
-            type="hidden"
-            id="customerId"
-            name="customerId"
-            value={metadata.customerId}
-          />
-          <button type="submit">Manage subscription</button>
+          <button type="submit">Checkout now!</button>
         </form>
       </div>
     </>

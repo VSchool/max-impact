@@ -40,8 +40,25 @@ const adminLinks = {
 }
 
 export const Root = ({ admin }) => {
-  // const { user } = useAuth0()
-  // const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/app_metadata`]
+  const { user, isAuthenticated, isLoading } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isLoading && isAuthenticated) {
+      const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/app_metadata`]
+      if (metadata.admin) {
+        navigate('/admin')
+      } else {
+        navigate('/dashboard')
+      }
+    }
+  }, [isAuthenticated, isLoading])
+
+  if (isLoading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
 
   return (
     <>

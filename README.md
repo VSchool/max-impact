@@ -141,6 +141,8 @@ cd client && npm run dev
 
 Make sure to add the following values to the .env file to make sure we have callback URIs for the Stripe API
 
+Examples:
+
 ```
 STRIPE_SUCCESS_URI='http://localhost:5173/payment-confirmation?status=success'
 STRIPE_FAILURE_URI='http://localhost:5173/payment-confirmation?status=failure'
