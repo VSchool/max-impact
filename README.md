@@ -139,15 +139,18 @@ cd client && npm run dev
 
 # Stripe Payment
 
-Make sure to add the following values to the .env file to make sure we have callback URIs for the Stripe API
+Make sure to add the following values to the .env file to make sure we have callback URIs for the Stripe API.  You will also need to add the STRIPE_WEBHOOK_SIGNING_SECRET found in the Stripe dashboard.
 
 Examples:
 
 ```
-STRIPE_SUCCESS_URI='http://localhost:5173/payment-confirmation?status=success'
-STRIPE_FAILURE_URI='http://localhost:5173/payment-confirmation?status=failure'
+STRIPE_SUCCESS_URI='http://localhost:8080/stripe/confirm?status=success'
+STRIPE_FAILURE_URI='http://localhost:8080/stripe/confirm?status=failure'
+STRIPE_SUCCESS_REDIRECT='http://localhost:5173/payment-confirmation?status=success'
+STRIPE_FAILURE_REDIRECT='http://localhost:5173/payment-confirmation?status=failure'
 STRIPE_USER_PORTAL_CALLBACK_URI='http://localhost:5173'
-STRIPE_WEBHOOK_SIGNING_SECRET="whsec_3173545b4022a9b6cd6559d640bd3c48fca49b294ebc8c155d9d02692d215b8a"
+STRIPE_WEBHOOK_SIGNING_SECRET="your secret here"
+STRIPE_PRICE_LOOKUP_KEY="price id here"
 ```
 
 #### General Stripe Payment Flow:
@@ -159,3 +162,9 @@ Account management is handled via Stripe's assets, so we have created a route th
 1. Add env variables
 2. Configure Stripe
 3. Stripe CLI for testing
+
+#### Front end routing related to Stripe Subscription
+
+We use the Auth0 API to attach subscription status metadata to the Auth0 user.  If the user is authenticated but not subscribed, they are are re-routed to the subscription page, where they have to sign up in order to access content.
+
+Auth0 needs to be configured to provide app_metadata, which is also necessary for the admin feature.

@@ -44,7 +44,7 @@ stripeRouter.get('/confirm', async (req, res, next) => {
 stripeRouter.post('/create-checkout-session', async (req, res, next) => {
   const userId = req.body.customer
   //   price is hard coded as we only have one price (this could be an input if needed)
-  const subscriptionPriceLookupKey = 'price_1PnTNwHanGj2ccfvEq265lXz'
+  const subscriptionPriceLookupKey = process.env.STRIPE_PRICE_LOOKUP_KEY
 
   const session = await stripe.checkout.sessions.create({
     billing_address_collection: 'auto',
