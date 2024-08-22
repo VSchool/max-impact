@@ -10,7 +10,7 @@ const landingLinks = {
     { label: 'Courses', url: '/dashboard/lessons' },
     { label: 'Contact Us', url: '/contact' },
   ],
-  sidebar: []
+  sidebar: [],
 }
 const dashboardLinks = {
   main: [
@@ -19,39 +19,50 @@ const dashboardLinks = {
     { label: 'Contact Us', url: '/contact' },
   ],
   sidebar: [
-    {label: "Search", url: '/'},
-    {label: "Archive", url: '/dashboard/archive'},
-    {label: "Payment Method", url: '/'},
-    {label: "Manage Account", url: '/'}
-  ]
+    { label: 'Search', url: '/' },
+    { label: 'Archive', url: '/dashboard/archive' },
+    { label: 'Payment Method', url: '/' },
+    { label: 'Manage Account', url: '/' },
+  ],
 }
 const adminLinks = {
   main: [
     { label: 'Home', url: '/admin' },
     { label: 'Courses', url: '/admin/lessons' },
-    { label: 'Contact us', url: '/admin/contact' },
+    { label: 'Contact us', url: '/contact' },
   ],
   sidebar: [
-    
-    {label: "Search", url: '/'},
-    {label: "Uploaded Courses", url: '/admin/lessons'},
-    {label: "Stats", url: '/'},
-    {label: "Archive", url: '/dashboard/archive'},
-    
-  ]
+    { label: 'Search', url: '/' },
+    { label: 'Uploaded Courses', url: '/admin/lessons' },
+    { label: 'Stats', url: '/' },
+    { label: 'Archive', url: '/dashboard/archive' },
+  ],
 }
 
 export const Root = ({ admin }) => {
-  const { user } = useAuth0()
+  const { user, isAuthenticated, isLoading } = useAuth0()
   const navigate = useNavigate()
-  const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
+
   useEffect(() => {
-    if (admin !== metadata.admin) navigate(user.admin ? '/admin' : '/')
-  }, [admin, user, navigate])
+    if (!isLoading && isAuthenticated) {
+      const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/app_metadata`]
+      if (metadata.admin) {
+        navigate('/admin')
+      } else {
+        navigate('/dashboard')
+      }
+    }
+  }, [isAuthenticated, isLoading])
+
+  if (isLoading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
 
   return (
     <>
-      <Navbar user={user} links={user && metadata.admin ? adminLinks : user ? dashboardLinks : landingLinks} />
+      <Navbar links={landingLinks} />
       <Outlet />
     </>
   )
