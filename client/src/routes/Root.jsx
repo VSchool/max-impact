@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom'
 import '../styles/global.css'
 import Navbar from '../components/Navbar'
@@ -59,6 +59,22 @@ export const Root = ({ admin }) => {
       <div>Loading...</div>
     )
   }
+
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600); // Adjust the breakpoint as needed
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check the screen size on component mount
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+console.log(user, metadata);
 
   return (
     <>

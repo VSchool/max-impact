@@ -26,7 +26,7 @@ const publicRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: <Landing showNavbar={true}/>  
       },
       {
         path: 'contact',
@@ -64,10 +64,10 @@ const publicRouter = createBrowserRouter([
         element: <LessonsDisplayArea />,
       },
       {
-        path: 'archive',
-        element: <ArchiveUser />,
-      },
-    ],
+        path: 'contact',  
+        element: <ContactUs showNavbar={true} />
+      }
+    ]
   },
   {
     path: '/admin',
@@ -85,6 +85,10 @@ const publicRouter = createBrowserRouter([
         path: 'lessons',
         element: <LessonsDisplayArea />,
       },
+      {
+        path: 'contact',
+        element: <ContactUs showNavbar={true}/>
+      }
     ],
   },
 ])

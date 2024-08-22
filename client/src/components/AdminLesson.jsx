@@ -7,7 +7,7 @@ const AdminLesson = ({ title, date, imgSrc }) => {
   return (
     <div className="lesson">
       <div className="lesson-image-container">
-        <img className="lesson-image" src={imgSrc} alt={title} />
+        <img className="lessons-image" src={imgSrc} alt={title} />
       </div>
       <div className="lesson-info">
         <div className="lesson-title-container">
