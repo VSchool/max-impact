@@ -22,10 +22,17 @@ const Archive = () => {
           attachment: "Download Attachment",
           imgSrc: "/src/assets/icons/video_card.svg",
         },
+                {
+          title: "Class 2",
+          date: "Uploaded 5/8/2024",
+          attachment: "Download Attachment",
+          imgSrc: "/src/assets/icons/video_card.svg",
+        }
       ];
 
   return (
-    <div className="achieve-page">
+    <div className="achieve-page-wrapper">
+      <div className='achieve-page'>
       <Sidebar isAdmin={isAdmin} />
        <div className='test'>
       <section className="achieve-greeting-section">
@@ -51,6 +58,7 @@ const Archive = () => {
           ))}
         </div>
       </section>
+      </div>
       </div>
     </div>
   );

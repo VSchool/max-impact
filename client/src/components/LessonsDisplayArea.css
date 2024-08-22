@@ -1,16 +1,25 @@
+
 .lessons-display-area {
-    position: absolute;
-    width: 1036px;
-    height: 1816px;
-    left: 308px;
-    top: 163px;
-    overflow-y: scroll;
-    border-radius: 16px 16px 0px 0px;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #61537B;
+    
 }
 
-.user-greeting-section {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
-    padding: 20px;
+.course-section{
+
+    background: #61537B;
+    padding: 40px;
+    width: calc(100% - 30%); 
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
 }
 
 .dashboard-title {
@@ -27,8 +36,12 @@
 }
 
 .favorites-section {
-    background-color: #FFFFFF;
-    padding: 20px;
+  background-color: #FFFFFF;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding-left: 20px;
+  padding-top: 20px;
+  
 }
 
 .section-title {
@@ -42,7 +55,7 @@
     padding-top: 20px;
 }
 
-.lessons-container {
+.lesson-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,62 +67,79 @@
 }
 
 .recent-course-videos-section {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #61537B;
-    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    padding-top: 40px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
+.greetings-user{
+    display: none;
+}
+
+
+
 
 
 @media (max-width: 600px) {
     .lessons-display-area {
+        background-color: #FFFFFF;
         width: 100%;
-        height: auto;
+        
+      }
+
+      .course-section{
+        display: flex;
+        padding: 10px;
+        background: #FFFFFF;
+        position: fixed;
         left: 0;
-        top: 76px;
-        overflow-y: auto;
-        padding-bottom: 20px;
+        width: 100%;
+      }
+      .greetings-user{
+        display: flex;
+        padding-top: 20px;
+        border-bottom: 4px solid rgba(229, 222, 222, 0.8);
+        padding-bottom: 16px; 
+        margin-bottom: 14px; 
+        width: 80%;
+        margin-left: 20px;
     }
-
-    .user-greeting-section, .recent-course-videos-section {
-        text-align: center;
-    }
-
-    .dashboard-title {
-        font-size: 24px;
-        line-height: 32px;
+    .favorites-section{
+        padding-top: 0px;
     }
 
     .section-title {
+        display: flex;
+        flex-direction: row;
         font-size: 20px;
         line-height: 28px;
         padding-left: 0;
     }
 
-    .lessons-container {
+    .lesson-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px 24px;
+        border-bottom: 4px solid rgba(229, 222, 222, 0.8);
+        padding-bottom: 16px; 
+        margin-bottom: 14px; 
+        /* width: 80%;  */
+    }
+    .recent-course-videos-section {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        justify-content: space-between;
+        margin-top: 0px;
+        padding-top: 0px;
     }
-
-    .hamburger {
-        display:block;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1001;
-        cursor: pointer;
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: #000;
-    }
-
     .sidebar {
-        width: 70%;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
+    display: none;
     }
 }

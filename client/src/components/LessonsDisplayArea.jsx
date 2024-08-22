@@ -24,14 +24,15 @@ const LessonsDisplayArea = () => {
 
     return (
       <div className="lessons-display-area">
-
         <Sidebar />
-        <section className="user-greeting-section">
-          <h1 className="dashboard-title">Hello, [User Name]</h1>
+        <section className='course-section'>
+        <section className='greetings-user'>
+        <h2>Hello, User</h2>
         </section>
         <section className="favorites-section">
+          
           <h2 className="section-title">Favorites</h2>
-          <div className="lessons-container">
+          <div className="lesson-container">
             {lessons.slice(0, 1).map((lesson, index) => (
               <Lesson key={index} {...lesson} />
             ))}
@@ -39,11 +40,12 @@ const LessonsDisplayArea = () => {
         </section>
         <section className="recent-course-videos-section">
           <h2 className="section-title">Recent Course Videos</h2>
-          <div className="lessons-container">
+          <div className="lesson-container">
             {lessons.map((lesson, index) => (
               <Lesson key={index} {...lesson} />
             ))}
           </div>
+        </section>
         </section>
       </div>
     );

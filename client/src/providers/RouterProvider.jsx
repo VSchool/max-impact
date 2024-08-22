@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing />  
+        element: <Landing showNavbar={true}/>  
       },
       {
         path: 'contact',
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <Root />,
+    element: <Root showNavbar={false} />,
     children: [
       {
         index: true,
@@ -58,13 +58,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'contact',  
-        element: <ContactUs />
+        element: <ContactUs showNavbar={true} />
       }
     ]
   },
   {
     path: 'admin',
-    element: <Root admin />,
+    element: <Root   showNavbar={false} admin />,
     children: [
       {
         index: true,
@@ -72,11 +72,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'lessons',
-        element: <AdminPage />
+        element: <AdminPage  />
       },
       {
         path: 'archive',
-        element: <Archive />
+        element: <Archive/>
       },
       {
         path: 'video',  
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'contact',
-        element: <ContactUs />
+        element: <ContactUs showNavbar={true}/>
       }
     ],
 // <<<<<<< routing
