@@ -41,6 +41,12 @@ const adminLinks = {
 
 export const Root = ({ admin }) => {
   const { user, isAuthenticated, isLoading } = useAuth0()
+  if (isLoading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+  
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -53,12 +59,6 @@ export const Root = ({ admin }) => {
       }
     }
   }, [isAuthenticated, isLoading])
-
-  if (isLoading) {
-    return (
-      <div>Loading...</div>
-    )
-  }
 
 
   const [isMobile, setIsMobile] = useState(false);
@@ -73,8 +73,6 @@ export const Root = ({ admin }) => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-console.log(user, metadata);
 
   return (
     <>
