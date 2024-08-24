@@ -5,6 +5,7 @@ export default function Capture() {
   const { user } = useAuth0()
   const [metadata, setMetadata] = useState({ customerId: '' })
   const [userId, setUserId] = useState('userId')
+  const [productId, setProductId] = useState(import.meta.env.VITE_STRIPE_PRODUCT_ID)
 
   useEffect(() => {
     if (user) {
@@ -12,6 +13,7 @@ export default function Capture() {
       setUserId(user.sub)
     }
   }, [user])
+
   return (
     <>
       <div>
@@ -19,6 +21,7 @@ export default function Capture() {
         <div>Price is $35 / month</div>
         <form action="/stripe/create-checkout-session" method="POST">
           <input type="hidden" id="customer" name="customer" value={userId} />
+          <input type="hidden" id="productId" name="productId" value={productId} />
           <button type="submit">Checkout now!</button>
         </form>
       </div>
