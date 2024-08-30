@@ -16,7 +16,9 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     // Retrieve the isAdmin context from the Outlet context
-    const { isAdmin } = useOutletContext();
+    // const { isAdmin } = useOutletContext();
+    // temporary sidebar adjustment (how do we get isAdmin)
+    const isAdmin = false
     const { logout } = useAuth0();
 
     const handleLogout = () => {
