@@ -43,6 +43,11 @@ stripeRouter.get('/confirm', async (req, res, next) => {
 
 stripeRouter.post('/create-checkout-session', async (req, res, next) => {
   const userId = req.body.customer
+  const userEmail = req.body.email
+  // error handling for userId
+  if (!userId || !userEmail) {
+    res.status(400).send('User ID & Email is required');
+  }
   //   price comes from the frontend form, which stores productIds inside of env variables instead of loooking them up via stripe api
   const subscriptionPriceLookupKey = req.body.productId
 
@@ -58,6 +63,7 @@ stripeRouter.post('/create-checkout-session', async (req, res, next) => {
     // sucess_url provides auth0 userId & stripe session.id
     success_url: `${process.env.STRIPE_SUCCESS_URI}&userId=${userId}&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.STRIPE_FAILURE_URI}&userId=${userId}`,
+    customer_email: userEmail
   })
 
   res.redirect(303, session.url)

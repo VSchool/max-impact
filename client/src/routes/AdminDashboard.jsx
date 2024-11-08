@@ -48,7 +48,7 @@ export const AdminDashboard = ({admin}) => {
     const { logout, user } = useAuth0();
     const { getAllFileMetadata } = useFileMetadataContext();
     const navigate = useNavigate()
-    const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/user_metadata`]
+    const metadata = user[`${import.meta.env.VITE_AUTH0_NAMESPACE}/app_metadata`]
 
     useEffect(() => {
         getAllFileMetadata()
